@@ -1,0 +1,82 @@
+# Filename matching and completion in a case-insensitive fashion.
+set completion-ignore-case on
+
+# Don't ask whether the list of possibilities should be displayed if 200 items
+# or less.
+set completion-query-items 200
+
+# Completed directory names have a slash appended.
+set mark-directories on
+
+# Completed symlinked directory names have a slash appended.
+set mark-symlinked-directories on
+
+# Don't match files whose names begin with a '.', unless the leading '.' is
+# supplied by the user.
+set match-hidden-files off
+
+# Display all completion results at once.
+set page-completions off
+
+# Words which have more than one possible completion cause the matches to be
+# listed immediately instead of ringing the bell.
+set show-all-if-ambiguous on
+
+# Words which have more than one possible completion without any possible
+# partial completion cause the matches to be listed immediately instead of
+# ringing the bell.
+set show-all-if-unmodified on
+
+# Don't insert characters from the completion that match characters after point
+# in the word being completed.
+set skip-completed-text on
+
+# A character denoting a file's type is appended to the filename when listing
+# possible completions.
+set visible-stats on
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'.
+set convert-meta off
+set input-meta on
+set output-meta on
+
+# Navigate history with arrows.
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Vi editing mode.
+# set editing-mode vi
+
+# Bindings for vi-command mode.
+# set keymap vi-command
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
+# "\ep": yank-last-arg
+# "\C-a": vi-insert-beg
+# "\C-e": vi-append-eol
+# For Linux console and RH/Debian xterm.
+# "\e[1~": beginning-of-line
+# "\e[4~": end-of-line
+# For non-RH/Debian xterm.
+# "\eOH": beginning-of-line
+# "\eOF": end-of-line
+# For FreeBSD console
+# "\e[H": beginning-of-line
+# "\e[F": end-of-line
+
+# Bindings for vi-insert mode:
+# set keymap vi-insert
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
+# "\C-l": clear-screen
+# "\C-a": beginning-of-line
+# "\C-e": end-of-line
+# For Linux console and RH/Debian xterm.
+# "\e[1~": beginning-of-line
+# "\e[4~": end-of-line
+# For non-RH/Debian xterm.
+# "\eOH": beginning-of-line
+# "\eOF": end-of-line
+# For FreeBSD console
+# "\e[H": beginning-of-line
+# "\e[F": end-of-line

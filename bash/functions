@@ -1,0 +1,163 @@
+# ------------------------------------------------------------------------------
+# COMMON FUNCTIONS
+# ------------------------------------------------------------------------------
+
+# Usage: mkcd <dir>
+# Create a new directory <dir> and cd into it.
+mkcd ()
+{
+  if [[ $# -eq 1 ]]; then
+    local _dir="$1"
+    mkdir "$_dir" && cd "$_dir"
+  else
+    echo 'Usage: mkcd <dir>' && return 1
+  fi
+}
+
+# Usage: dud [<depth>]
+# Report disk usage with a max depth of 1 or <depth>.
+dud ()
+{
+  if [[ $# -lt 2 ]]; then
+    local _depth="${1:-1}"
+    du -d "$_depth"
+  else
+    echo 'Usage: dud [<depth>]' && return 1
+  fi
+}
+
+# ------------------------------------------------------------------------------
+# UTF-8/UNICODE FUNCTIONS
+# ------------------------------------------------------------------------------
+
+# Usage: utfescape <char>
+# Escape UTF-8 characters into their 3-byte format.
+utfescape ()
+{
+  printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
+  echo # newline
+}
+
+# Usage: uniencode <char>
+# Encode character to `\x{ABCD}` Unicode escape sequence.
+uniencode ()
+{
+  perl -e "use utf8; print sprintf('\\x{%04X}', ord(\"$@\"))"
+  echo # newline
+}
+
+# Usage: unidecode <seq>
+# Decode `\x{ABCD}` Unicode escape sequence to character.
+unidecode ()
+{
+  perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
+  echo # newline
+}
+
+# ------------------------------------------------------------------------------
+# PATH MANIPULATION FUNCTIONS
+# ------------------------------------------------------------------------------
+
+# Usage: pls [<var>]
+# List path entries of PATH or environment variable <var>.
+pls ()
+{
+  if [[ $# -lt 2 ]]; then
+    eval "echo \$${1:-PATH}" | tr ':' '\n'
+  else
+    echo 'Usage: pls [<var>]' && return 1
+  fi
+}
+
+# ------------------------------------------------------------------------------
+# MISC FUNCTIONS
+# ------------------------------------------------------------------------------
+
+# Usage: gifify <video>
+# Create a GIF out of <video> and write it to <video>.gif.
+gifify ()
+{
+  if [[ $# -eq 1 ]]; then
+    ffmpeg -i $1 -r 10 -f gif - | gifsicle --delay 10 > $1.gif
+  else
+    echo 'Usage: gifify <video>' && return 1
+  fi
+}
+
+# Usage: dataurl <image>
+# Create a data URL from <image>.
+dataurl ()
+{
+  if [[ $# -eq 1 ]]; then
+    echo "data:image/${1##*.};base64,$(openssl base64 -in "$1")" | tr -d '\n'
+  else
+    echo 'Usage: dataurl <image>' && return 1
+  fi
+}
+
+# Usage: serve [<dir>] [<port>]
+# Serve the contents of the current directory on port 3000, or <dir> on <port>.
+serve ()
+{
+  if [[ $# -lt 3 ]]; then
+    local _dir="${1:-.}"
+    local _port="${2:-3000}"
+    ruby -run -e httpd $_dir -p $_port
+  else
+    echo 'Usage: serve [<dir>] [<port>]' && return 1
+  fi
+}
+
+# Usage: encrypt <file>
+# Encrypts the contents of `<file>` and writes them to `<file>.aes`.
+encrypt ()
+{
+  if [[ $# -gt 0 ]]; then
+    openssl aes-256-cbc -salt -in "$@" -out "$@".aes
+  else
+    echo 'Usage: encrypt <file>' && return 1
+  fi
+}
+
+# Usage: decrypt <file>
+# Decrypts the contents of `<file>.aes` and writes them to `<file>`.
+decrypt ()
+{
+  if [[ $# -gt 0 ]]; then
+    openssl aes-256-cbc -d -salt -in "$@".aes -out "$@"
+  else
+    echo 'Usage: decrypt <file>' && return 1
+  fi
+}
+
+# Usage: certpush <[user@]host>...
+# Push this box's SSH public key to other boxes.
+certpush ()
+{
+  if [[ $# -gt 0 ]]; then
+    local _host
+    [[ -f "$HOME/.ssh/id_rsa.pub" ]] || ssh-keygen -t rsa -C ''
+    for _host in "$@"; do
+      echo $_host
+      ssh $_host 'mkdir -p ~/.ssh && chmod 0700 ~/.ssh && cat >> ~/.ssh/authorized_keys' < "$HOME/.ssh/id_rsa.pub"
+    done
+  else
+    echo 'Usage: certpush <[user@]host>...' && return 1
+  fi
+}
+
+# ------------------------------------------------------------------------------
+# MOTD / FORTUNE
+# ------------------------------------------------------------------------------
+
+# Usage: motd
+# Message of the day.
+motd ()
+{
+  local _msg="$(uname -mnpsr)\n$(uptime)"
+  if [[ -n "$(command -v cowsay)" ]]; then
+    echo -e "$_msg" | cowsay -n -f bunny
+  else
+    echo -e "$_msg"
+  fi
+}

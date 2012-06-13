@@ -1,0 +1,53 @@
+[user]
+  name = Daniel Perez Alvarez
+  email = daniel@unindented.org
+  signingkey = CB80DD8043EF4B86
+
+[alias]
+  a = add
+  ap = add --patch
+  c = commit
+  co = checkout
+  d = diff
+  dw = diff --color-words
+  dc = diff --cached
+  dcw = diff --cached --color-words
+  fix = commit --amend --reuse-message=HEAD
+  fubar = reset --hard
+  l = log --oneline --graph --decorate --max-count=20
+  ll = log --oneline --graph --decorate
+  s = status --branch --short --untracked=no
+  ss = status
+
+[core]
+  attributesfile = ~/.gitattributes
+  excludesfile = ~/.gitignore
+  whitespace = space-before-tab,trailing-space
+
+[commit]
+  gpgsign = true
+
+[pull]
+  rebase = true
+
+[push]
+  default = simple
+  followTags = true
+
+[merge]
+  tool = vimdiff
+[mergetool "vimdiff"]
+  prompt = false
+
+[color]
+  ui = auto
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
