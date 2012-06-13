@@ -1,0 +1,6 @@
+templates:
+  params:
+    author-name: Daniel Perez Alvarez
+    author-email: daniel@unindented.org
+    copyright: Copyright (c) Daniel Perez Alvarez
+    github-username: unindented

@@ -1,0 +1,96 @@
+# ------------------------------------------------------------------------------
+# COMMON ALIASES
+# ------------------------------------------------------------------------------
+
+# Enable aliases to be sudo'ed.
+alias sudo='sudo '
+
+# Shortcuts.
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Grep colors.
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# List colors (system specific).
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  export LSCOLORS='exfxcxdxbxegedabagacad'
+  alias ls='ls -G'
+else
+  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+  alias ls='ls --color=auto'
+fi
+
+# List aliases.
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias lr='ls -Alrt'
+
+# Utility aliases.
+alias a='ag --pager "$AG_PAGER_COLOR"'
+alias df='df -h'
+alias du='du -h'
+alias f='find . -name'
+alias g='git'
+alias h='history | tail -20'
+alias hf='history | grep -i'
+alias hh='history'
+alias s='stat -f "%z bytes"'
+alias v='vim'
+
+# Other useful aliases.
+alias mkdir='mkdir -p'
+
+# Encode/decode text.
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# IP addresses.
+alias localip='ipconfig getifaddr en0'
+alias remoteip='curl icanhazip.com'
+
+# Weather.
+alias weather='curl wttr.in?m'
+alias moon='curl wttr.in/Moon'
+
+# ------------------------------------------------------------------------------
+# LINUX ALIASES
+# ------------------------------------------------------------------------------
+
+if [[ "$OSTYPE" =~ ^linux ]]; then
+
+  # Clipboard aliases.
+  alias pbcopy='xclip -i -selection clipboard'
+  alias pbpaste='xclip -o -selection clipboard'
+
+fi
+
+# ------------------------------------------------------------------------------
+# MAC OS X ALIASES
+# ------------------------------------------------------------------------------
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+
+  # Show/hide hidden files.
+  alias showfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+  alias hidefiles='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+
+  # Show/hide desktop icons (useful when presenting).
+  alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+  alias hidedesktop='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+
+  # Enable/disable Spotlight.
+  alias spoton='sudo mdutil -a -i on'
+  alias spotoff='sudo mdutil -a -i off'
+
+  # Recursively delete .DS_Store files.
+  alias cleanup="find . -type f -name '*.DS_Store' -delete"
+
+  # One day I might need it (http://xkcd.com/530/).
+  alias stfu="osascript -e 'set volume output muted true'"
+  alias pumpit="osascript -e 'set volume 7'"
+
+fi
