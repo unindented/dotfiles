@@ -7,7 +7,7 @@ source ~/.bash/config
 [[ -s "$PYENV_ROOT/bin/pyenv" ]] && eval "$($PYENV_ROOT/bin/pyenv init -)"
 [[ -s "$RBENV_HOME/bin/rbenv" ]] && eval "$($RBENV_HOME/bin/rbenv init -)"
 
-source "$HOME/.bash/prompt"
+eval "$(starship init bash)"
 source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
 source "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
 
