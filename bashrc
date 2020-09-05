@@ -16,3 +16,6 @@ __git_complete g __git_main
 
 # Only display MOTD in interactive shells.
 [[ "$-" == *i* ]] && motd
+
+# Do not display zsh warning.
+export BASH_SILENCE_DEPRECATION_WARNING=1
