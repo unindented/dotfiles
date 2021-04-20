@@ -24,6 +24,9 @@
   excludesfile = ~/.gitignore
   whitespace = space-before-tab,trailing-space
 
+[init]
+  defaultBranch = main
+
 [commit]
   gpgsign = true
 
