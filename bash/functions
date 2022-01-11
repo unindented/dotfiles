@@ -73,17 +73,6 @@ pls ()
 # MISC FUNCTIONS
 # ------------------------------------------------------------------------------
 
-# Usage: gifify <video>
-# Create a GIF out of <video> and write it to <video>.gif.
-gifify ()
-{
-  if [[ $# -eq 1 ]]; then
-    ffmpeg -i $1 -r 10 -f gif - | gifsicle --delay 10 > $1.gif
-  else
-    echo 'Usage: gifify <video>' && return 1
-  fi
-}
-
 # Usage: dataurl <image>
 # Create a data URL from <image>.
 dataurl ()
