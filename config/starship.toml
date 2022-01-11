@@ -4,6 +4,16 @@ symbol = "  "
 [conda]
 symbol = " "
 
+[custom.arm64]
+symbol = " "
+when = '[ "$(arch)" == "arm64" ]'
+os = "macos"
+
+[custom.i386]
+symbol = " "
+when = '[ "$(arch)" == "i386" ]'
+os = "macos"
+
 [dart]
 symbol = " "
 
@@ -65,6 +75,9 @@ symbol = " "
 
 [scala]
 symbol = " "
+
+[shlvl]
+symbol = " "
 
 [swift]
 symbol = "ﯣ "
