@@ -23,45 +23,34 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 # HASKELL
 # ------------------------------------------------------------------------------
 
-# Load Cabal.
 export CABAL_HOME="$HOME/.cabal"
 
 # ------------------------------------------------------------------------------
 # NODE
 # ------------------------------------------------------------------------------
 
-# Load NVM.
 export NVM_HOME="$HOME/.nvm"
 
 # ------------------------------------------------------------------------------
 # PYTHON
 # ------------------------------------------------------------------------------
 
-# Load PYENV.
 export PYENV_ROOT="$HOME/.pyenv"
 
 # ------------------------------------------------------------------------------
 # RUBY
 # ------------------------------------------------------------------------------
 
-# Load RBENV.
 export RBENV_HOME="$HOME/.rbenv"
 
 # ------------------------------------------------------------------------------
 # RUST
 # ------------------------------------------------------------------------------
 
-# Load Cargo.
 export CARGO_HOME="$HOME/.cargo"
-
-# ------------------------------------------------------------------------------
-# TIZEN
-# ------------------------------------------------------------------------------
-
-export TIZEN_STUDIO_HOME="$HOME/tizen-studio/tools/ide"
 
 # ------------------------------------------------------------------------------
 # PATH
 # ------------------------------------------------------------------------------
 
-export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$JAVA_HOME/bin:$CABAL_HOME/bin:$NVM_HOME/bin:$PYENV_ROOT/bin:$RBENV_HOME/bin:$CARGO_HOME/bin:$TIZEN_STUDIO_HOME/bin:/Applications/Sketch.app/Contents/Resources/sketchtool/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$JAVA_HOME/bin:$CABAL_HOME/bin:$NVM_HOME/bin:$PYENV_ROOT/bin:$RBENV_HOME/bin:$CARGO_HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
