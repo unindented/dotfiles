@@ -31,7 +31,6 @@ alias ll='ls -alF'
 alias lr='ls -Alrt'
 
 # Utility aliases.
-alias a='ag --pager "$AG_PAGER_COLOR"'
 alias df='df -h'
 alias du='du -h'
 alias f='find . -name'
