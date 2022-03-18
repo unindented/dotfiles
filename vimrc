@@ -223,11 +223,6 @@ set colorcolumn=101
 " Colors.
 set background=dark
 
-" Color theme.
-let g:solarized_contrast="normal"
-let g:solarized_visibility="low"
-colorscheme solarized
-
 " Status line.
 if has("statusline") && !&cp
   set statusline=
