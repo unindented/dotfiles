@@ -14,7 +14,6 @@ source ~/.bash/config
 [[ -s "$RBENV_HOME/bin/rbenv" ]] && eval "$($RBENV_HOME/bin/rbenv init -)"
 
 eval "$(starship init bash)"
-source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
 source "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
 
 # Fix aliased git completion.
