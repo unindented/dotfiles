@@ -53,4 +53,4 @@ export CARGO_HOME="$HOME/.cargo"
 # PATH
 # ------------------------------------------------------------------------------
 
-export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$JAVA_HOME/bin:$CABAL_HOME/bin:$NVM_HOME/bin:$PYENV_ROOT/bin:$RBENV_HOME/bin:$CARGO_HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$JAVA_HOME/bin:$CABAL_HOME/bin:$NVM_HOME/bin:$PYENV_ROOT/bin:$RBENV_HOME/bin:$CARGO_HOME/bin:$PATH"
