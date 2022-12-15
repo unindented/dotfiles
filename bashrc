@@ -9,6 +9,8 @@ source ~/.bash/functions
 source ~/.bash/environment
 source ~/.bash/config
 
+[[ -s ~/.config/broot/launcher/bash/br ]] && source ~/.config/broot/launcher/bash/br
+
 [[ -s "$NVM_HOME/nvm.sh" ]] && source "$NVM_HOME/nvm.sh"
 [[ -s "$PYENV_ROOT/bin/pyenv" ]] && eval "$($PYENV_ROOT/bin/pyenv init -)"
 [[ -s "$RBENV_HOME/bin/rbenv" ]] && eval "$($RBENV_HOME/bin/rbenv init -)"
