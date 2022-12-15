@@ -1,5 +1,7 @@
 config/*
 !config/starship.toml
+local/*
+!local/bin
 ssh/*
 !ssh/config
 stack/*
