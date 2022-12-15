@@ -9,16 +9,7 @@ Host github.com
   User git
   IdentityFile ~/.ssh/github.key
 
-Host heroku.com
-  User git
-  IdentityFile ~/.ssh/heroku.key
-
 Host unindented
   HostName unindented.org
   User unindented
   IdentityFile ~/.ssh/unindented.key
-
-Host discoverelectron
-  HostName discoverelectron.com
-  User discoverelectron
-  IdentityFile ~/.ssh/discoverelectron.key
