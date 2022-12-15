@@ -1,0 +1,7 @@
+color:
+  theme: custom
+icons:
+  when: never
+sorting:
+  dir-grouping: first
+symlink-arrow: ->

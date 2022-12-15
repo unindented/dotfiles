@@ -1,4 +1,5 @@
 config/*
+!config/lsd
 !config/starship.toml
 local/*
 !local/bin

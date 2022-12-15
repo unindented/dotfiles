@@ -25,10 +25,15 @@ else
 fi
 
 # List aliases.
-alias l='ls -CF'
+alias ls='lsd'
+alias l='ls -F'
+alias lt='ls -F --tree'
 alias la='ls -A'
+alias lat='ls -A --tree'
 alias ll='ls -alF'
+alias llt='ls -alF --tree'
 alias lr='ls -Alrt'
+alias lrt='ls -Alrt --tree'
 
 # Utility aliases.
 alias df='df -h'
