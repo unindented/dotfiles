@@ -1,83 +1,189 @@
-[aws]
-symbol = "  "
-
-[conda]
-symbol = " "
-
 [custom.arm64]
-symbol = " "
+symbol = "arm64"
+style = "none"
+format = '\[[$symbol($output )]($style)\] '
 when = '[ "$(arch)" == "arm64" ]'
 os = "macos"
 
 [custom.i386]
-symbol = " "
+symbol = "i386"
+style = "none"
+format = '\[[$symbol($output )]($style)\] '
 when = '[ "$(arch)" == "i386" ]'
 os = "macos"
 
+[aws]
+symbol = "aws "
+
+[azure]
+symbol = "azure "
+
+[buf]
+symbol = "buf "
+
+[c]
+symbol = "c "
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[cmake]
+symbol = "cmake "
+
+[cobol]
+symbol = "cobol "
+
+[conda]
+symbol = "conda "
+
+[container]
+symbol = "lxc "
+
+[crystal]
+symbol = "cr "
+
 [dart]
-symbol = " "
+symbol = "dart "
+
+[deno]
+symbol = "deno "
 
 [directory]
-read_only = " "
+read_only = " ro"
 fish_style_pwd_dir_length = 1
 truncate_to_repo = false
 
 [docker_context]
-symbol = " "
+symbol = "docker "
+
+[dotnet]
+symbol = ".net "
 
 [elixir]
-symbol = " "
+symbol = "exs "
 
 [elm]
-symbol = " "
+symbol = "elm "
+
+[erlang]
+symbol = "erl "
+
+[gcloud]
+symbol = "gcloud "
 
 [git_branch]
-symbol = " "
+symbol = "git "
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
 
 [golang]
-symbol = " "
+symbol = "go "
+
+[haskell]
+symbol = "hs "
+
+[helm]
+symbol = "helm "
 
 [hg_branch]
-symbol = " "
+symbol = "hg "
 
 [java]
-symbol = " "
+symbol = "java "
 
 [julia]
-symbol = " "
+symbol = "jl "
+
+[kotlin]
+symbol = "kt "
+
+[kubernetes]
+symbol = "k8s "
+
+[lua]
+symbol = "lua "
 
 [memory_usage]
-symbol = " "
+symbol = "mem "
 
 [nim]
-symbol = " "
+symbol = "nim "
 
 [nix_shell]
-symbol = " "
+symbol = "nix "
+
+[nodejs]
+symbol = "node "
+
+[ocaml]
+symbol = "ml "
+
+[openstack]
+symbol = "os "
 
 [package]
-symbol = " "
+symbol = "pkg "
 
 [perl]
-symbol = " "
+symbol = "pl "
 
 [php]
-symbol = " "
+symbol = "php "
+
+[pulumi]
+symbol = "pulumi "
+
+[purescript]
+symbol = "purs "
 
 [python]
-symbol = " "
+symbol = "py "
+
+[rlang]
+symbol = "r "
+
+[red]
+symbol = "red "
 
 [ruby]
-symbol = " "
+symbol = "rb "
 
 [rust]
-symbol = " "
+symbol = "rs "
 
 [scala]
-symbol = " "
+symbol = "scala "
 
-[shlvl]
-symbol = " "
+[singularity]
+symbol = "sy "
+
+[spack]
+symbol = "spack "
+
+[sudo]
+symbol = "sudo "
 
 [swift]
-symbol = "ﯣ "
+symbol = "swift "
+
+[terraform]
+symbol = "tf "
+
+[vlang]
+symbol = "v "
+
+[vagrant]
+symbol = "vagrant "
+
+[zig]
+symbol = "zig "
