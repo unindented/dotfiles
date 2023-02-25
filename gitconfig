@@ -30,6 +30,9 @@
 [commit]
   gpgsign = true
 
+[fetch]
+  prune = true
+
 [pull]
   rebase = true
 
