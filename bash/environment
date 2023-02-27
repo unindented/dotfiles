@@ -14,22 +14,28 @@ export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
 export GRADLE_HOME="$(realpath $(which gradle) | sed 's:/bin/gradle$::')"
 
 # ------------------------------------------------------------------------------
-# LLVM
-# ------------------------------------------------------------------------------
-
-export LLVM_HOME="$(brew --prefix)/opt/llvm"
-
-# ------------------------------------------------------------------------------
 # ANDROID
 # ------------------------------------------------------------------------------
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # ------------------------------------------------------------------------------
+# EMACS
+# ------------------------------------------------------------------------------
+
+export EMACS_CONFIG="$HOME/.config/emacs"
+
+# ------------------------------------------------------------------------------
 # HASKELL
 # ------------------------------------------------------------------------------
 
 export GHCUP_HOME="$HOME/.ghcup"
+
+# ------------------------------------------------------------------------------
+# LLVM
+# ------------------------------------------------------------------------------
+
+export LLVM_HOME="$(brew --prefix)/opt/llvm"
 
 # ------------------------------------------------------------------------------
 # NODE
@@ -59,4 +65,4 @@ export CARGO_HOME="$HOME/.cargo"
 # PATH
 # ------------------------------------------------------------------------------
 
-export PATH="$LLVM_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$JAVA_HOME/bin:$GHCUP_HOME/bin:$NVM_HOME/bin:$PYENV_ROOT/bin:$RBENV_HOME/bin:$CARGO_HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$LLVM_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$JAVA_HOME/bin:$EMACS_CONFIG/bin:$GHCUP_HOME/bin:$NVM_HOME/bin:$PYENV_ROOT/bin:$RBENV_HOME/bin:$CARGO_HOME/bin:$HOME/.local/bin:$PATH"
