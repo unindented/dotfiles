@@ -1,6 +1,7 @@
 config/*
 !config/doom
 !config/emacs
+!config/git
 !config/lsd
 !config/nvim
 !config/starship.toml
