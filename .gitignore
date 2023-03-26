@@ -4,6 +4,7 @@ config/*
 !config/git
 !config/lsd
 !config/nvim
+!config/tmux
 !config/starship.toml
 local/*
 !local/bin
