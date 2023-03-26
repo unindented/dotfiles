@@ -27,6 +27,9 @@
 [init]
   defaultBranch = main
 
+[advice]
+  addIgnoredFile = false
+
 [commit]
   gpgsign = true
 
