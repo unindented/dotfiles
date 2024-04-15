@@ -10,6 +10,6 @@ Host github.com
   IdentityFile ~/.ssh/github.key
 
 Host unindented
-  HostName unindented.org
+  HostName ssh.unindented.org
   User unindented
   IdentityFile ~/.ssh/unindented.key
