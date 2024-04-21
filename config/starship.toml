@@ -12,69 +12,15 @@ format = '\[[$symbol($output )]($style)\] '
 when = '[ "$(arch)" == "i386" ]'
 os = "macos"
 
-[aws]
-symbol = "aws "
-
-[azure]
-symbol = "azure "
-
-[buf]
-symbol = "buf "
-
-[c]
-symbol = "c "
-
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
-vicmd_symbol = "[<](bold green)"
-
-[cmake]
-symbol = "cmake "
-
-[cobol]
-symbol = "cobol "
-
-[conda]
-symbol = "conda "
-
-[container]
-symbol = "lxc "
-
-[crystal]
-symbol = "cr "
-
-[dart]
-symbol = "dart "
-
-[deno]
-symbol = "deno "
+vimcmd_symbol = "[<](bold green)"
 
 [directory]
 read_only = " ro"
 fish_style_pwd_dir_length = 1
 truncate_to_repo = false
-
-[docker_context]
-symbol = "docker "
-
-[dotnet]
-symbol = ".net "
-
-[elixir]
-symbol = "exs "
-
-[elm]
-symbol = "elm "
-
-[erlang]
-symbol = "erl "
-
-[gcloud]
-symbol = "gcloud "
-
-[git_branch]
-symbol = "git "
 
 [git_commit]
 tag_symbol = " tag "
@@ -86,14 +32,71 @@ diverged = "<>"
 renamed = "r"
 deleted = "x"
 
+[aws]
+symbol = "aws "
+
+[azure]
+symbol = "az "
+
+[bun]
+symbol = "bun "
+
+[c]
+symbol = "C "
+
+[cobol]
+symbol = "cobol "
+
+[conda]
+symbol = "conda "
+
+[crystal]
+symbol = "cr "
+
+[cmake]
+symbol = "cmake "
+
+[daml]
+symbol = "daml "
+
+[dart]
+symbol = "dart "
+
+[deno]
+symbol = "deno "
+
+[dotnet]
+symbol = ".NET "
+
+[docker_context]
+symbol = "docker "
+
+[elixir]
+symbol = "exs "
+
+[elm]
+symbol = "elm "
+
+[fennel]
+symbol = "fnl "
+
+[fossil_branch]
+symbol = "fossil "
+
+[gcloud]
+symbol = "gcp "
+
+[git_branch]
+symbol = "git "
+
 [golang]
 symbol = "go "
 
-[haskell]
-symbol = "hs "
+[gradle]
+symbol = "gradle "
 
-[helm]
-symbol = "helm "
+[guix_shell]
+symbol = "guix "
 
 [hg_branch]
 symbol = "hg "
@@ -107,14 +110,17 @@ symbol = "jl "
 [kotlin]
 symbol = "kt "
 
-[kubernetes]
-symbol = "k8s "
-
 [lua]
 symbol = "lua "
 
+[nodejs]
+symbol = "nodejs "
+
 [memory_usage]
-symbol = "mem "
+symbol = "memory "
+
+[meson]
+symbol = "meson "
 
 [nim]
 symbol = "nim "
@@ -122,14 +128,60 @@ symbol = "nim "
 [nix_shell]
 symbol = "nix "
 
-[nodejs]
-symbol = "node "
-
 [ocaml]
 symbol = "ml "
 
-[openstack]
-symbol = "os "
+[opa]
+symbol = "opa "
+
+[os.symbols]
+AIX = "aix "
+AlmaLinux = "alma "
+Alpaquita = "alq "
+Alpine = "alp "
+Amazon = "amz "
+Android = "andr "
+Arch = "rch "
+Artix = "atx "
+CentOS = "cent "
+Debian = "deb "
+DragonFly = "dfbsd "
+Emscripten = "emsc "
+EndeavourOS = "ndev "
+Fedora = "fed "
+FreeBSD = "fbsd "
+Garuda = "garu "
+Gentoo = "gent "
+HardenedBSD = "hbsd "
+Illumos = "lum "
+Kali = "kali "
+Linux = "lnx "
+Mabox = "mbox "
+Macos = "mac "
+Manjaro = "mjo "
+Mariner = "mrn "
+MidnightBSD = "mid "
+Mint = "mint "
+NetBSD = "nbsd "
+NixOS = "nix "
+OpenBSD = "obsd "
+OpenCloudOS = "ocos "
+openEuler = "oeul "
+openSUSE = "osuse "
+OracleLinux = "orac "
+Pop = "pop "
+Raspbian = "rasp "
+Redhat = "rhl "
+RedHatEnterprise = "rhel "
+Redox = "redox "
+RockyLinux = "rky "
+Solus = "sol "
+SUSE = "suse "
+Ubuntu = "ubnt "
+Ultramarine = "ultm "
+Unknown = "unk "
+Void = "void "
+Windows = "win "
 
 [package]
 symbol = "pkg "
@@ -140,6 +192,9 @@ symbol = "pl "
 [php]
 symbol = "php "
 
+[pijul_channel]
+symbol = "pijul "
+
 [pulumi]
 symbol = "pulumi "
 
@@ -149,11 +204,11 @@ symbol = "purs "
 [python]
 symbol = "py "
 
-[rlang]
-symbol = "r "
+[quarto]
+symbol = "quarto "
 
-[red]
-symbol = "red "
+[raku]
+symbol = "raku "
 
 [ruby]
 symbol = "rb "
@@ -164,11 +219,14 @@ symbol = "rs "
 [scala]
 symbol = "scala "
 
-[singularity]
-symbol = "sy "
-
 [spack]
 symbol = "spack "
+
+[solidity]
+symbol = "solidity "
+
+[status]
+symbol = "[x](bold red) "
 
 [sudo]
 symbol = "sudo "
@@ -176,14 +234,11 @@ symbol = "sudo "
 [swift]
 symbol = "swift "
 
+[typst]
+symbol = "typst "
+
 [terraform]
-symbol = "tf "
-
-[vlang]
-symbol = "v "
-
-[vagrant]
-symbol = "vagrant "
+symbol = "terraform "
 
 [zig]
 symbol = "zig "
