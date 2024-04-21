@@ -11,6 +11,7 @@ config/*
 !config/nvim
 !config/tmux
 !config/wezterm
+!config/zellij
 !config/starship.toml
 local/*
 !local/bin
