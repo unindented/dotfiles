@@ -10,6 +10,7 @@ config/*
 !config/mise
 !config/nvim
 !config/tmux
+config/tmux/plugins
 !config/wezterm
 !config/zellij
 !config/starship.toml
