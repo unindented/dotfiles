@@ -1,99 +1,261 @@
+set encoding=utf-8
+scriptencoding utf-8
+
+" PATHS {{{
 " ------------------------------------------------------------------------------
-" ESSENTIALS
+
+if !isdirectory($HOME . '/.vim/backups')
+  call mkdir($HOME . '/.vim/backups', 'p')
+endif
+
+set backupdir=~/.vim/backups
+set backup
+
+if !isdirectory($HOME . '/.vim/swaps')
+  call mkdir($HOME . '/.vim/swaps', 'p')
+endif
+
+set directory=~/.vim/swaps
+
+if has('persistent_undo')
+  if !isdirectory($HOME . '/.vim/undo')
+    call mkdir($HOME . '/.vim/undo', 'p')
+  endif
+
+  set undodir=~/.vim/undo
+  set undofile
+endif
+
+" }}}
+
+" LEADER {{{
 " ------------------------------------------------------------------------------
 
-" Better safe than sorry.
-set nocompatible
+nnoremap <space> <nop>
+let mapleader=" "
+let maplocalleader=","
 
-" All hail the mapleader.
-let mapleader=","
+" }}}
 
-" Load Pathogen.
-execute pathogen#infect()
+" EDITING {{{
+" ------------------------------------------------------------------------------
 
-" Sane indentation.
+" Show unprintable characters hexadecimal as <xx>.
+set display+=uhex
+
+" Don't redraw the screen while performing macros (so they run faster).
+set lazyredraw
+
+" Show line numbers relative to the current line.
+set number relativenumber
+
+" Reduce update delay when writing file to disk.
+set updatetime=300
+
+" Disable beeping and flashing on errors.
+set visualbell t_vb=
+
+" Insert single space after '.', '?', and '!' when joining.
+set nojoinspaces
+
+" Don't display lines wrapped by default.
+set nowrap
+
+if has('folding')
+  " Show folds in the gutter.
+  set foldcolumn=1
+
+  " Expand all folds.
+  set foldlevelstart=99
+
+  " Fold by indentation.
+  set foldmethod=indent
+endif
+
+if has('linebreak')
+  " When wrapping, break at end of word rather than mid-word.
+  set linebreak
+end
+
+if has('signs')
+  " Always show the sign column so things don't jump around when it appears.
+  set signcolumn=yes
+endif
+
+if has('syntax')
+  " Show column at common boundaries.
+  set colorcolumn=81,121
+
+  " Highlight the line that the cursor is on.
+  set cursorline
+endif
+
+" }}}
+
+" INDENTATION, INVISIBLE CHARS, AND FILL CHARS {{{
+" ------------------------------------------------------------------------------
+
+" Width of a tab.
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+
+" Use spaces instead of tabs.
 set expandtab
 
-" No backup or swap files.
-set nobackup
-set noswapfile
+" Customize invisible chars.
+set listchars=""
+set listchars+=eol:¬      " shown at the end of each line
+set listchars+=tab:▸\     " shown in place of a tab
+set listchars+=lead:·     " shown for leading spaces
+set listchars+=trail:·    " shown for trailing spaces
+set listchars+=extends:→  " shown in the last column when line overflows
+set listchars+=precedes:← " shown in the first column when line overflows
+set listchars+=conceal:•  " shown in place of concealed text
+set listchars+=nbsp:·     " shown in place of a non-breakable space
 
-" No beeps.
-set visualbell
-set noerrorbells
+" Display invisible chars.
+set list
 
-" Join with one space.
-set nojoinspaces
+if has('folding')
+  " Customize fill chars.
+  set fillchars=""
+  set fillchars+=stl:\       " status line of the current window
+  set fillchars+=stlnc:\     " status line of the non-current windows
+  set fillchars+=vert:┃      " vertical separators
+  set fillchars+=fold:-      " filling 'foldtext'
+  set fillchars+=foldopen:▾  " mark the beginning of a fold
+  set fillchars+=foldclose:▸ " show a closed fold
+  set fillchars+=foldsep:│   " open fold middle character
+  set fillchars+=diff:-      " deleted lines of the 'diff' option
+  set fillchars+=eob:\       " empty lines below the end of a buffer
+  set fillchars+=lastline:↓  " 'display' contains lastline/truncate
+endif
 
-" Sane search and replace.
-nnoremap / /\v
-vnoremap / /\v
-set ignorecase
-set smartcase
-set hlsearch
+if has('linebreak')
+  " Shown at the start of lines that have been wrapped.
+  set showbreak=↪
+endif
+
+" }}}
+
+" SPLITS {{{
+" ------------------------------------------------------------------------------
+
+" Open new split below rather than above.
+set splitbelow
+
+" Open new vertical split to the right, rather than left.
+set splitright
+
+" }}}
+
+" MOVEMENT {{{
+" ------------------------------------------------------------------------------
+
+" Enable use of mouse in all modes with a supported terminal.
+set mouse=a
+
+" Start vertically scrolling when 3 lines from the top or bottom.
+set scrolloff=3
+
+" How many columns to scroll at a time horizontally.
+set sidescroll=1
+
+" Start horizontally scrolling when 3 lines from the edges.
+set sidescrolloff=3
+
+" Don't reset cursor to start of line when moving around.
+set nostartofline
+
+" }}}
+
+" SEARCHING {{{
+" ------------------------------------------------------------------------------
+
+" Global substitutions by default.
 set gdefault
 
-" Show mode.
-set showmode
+" Case insensitive searches...
+set ignorecase
+" ...unless specifically searching for something with uppercase characters.
+set smartcase
 
-" Show relative numbers.
-set relativenumber
+if has('extra_search')
+  " Highlight search matches.
+  set hlsearch
+endif
 
+" Every character is special ("very magic").
+nnoremap / /\v
+vnoremap / /\v
+
+" }}}
+
+" MAPPINGS {{{
 " ------------------------------------------------------------------------------
-" MAPPINGS
-" ------------------------------------------------------------------------------
 
-" Happy fingers.
+" n - Normal
+" v - Visual and Select
+" s - Select
+" x - Visual
+" o - Operator-pending
+" i - Insert
+" l - Insert, Command-line, Lang-Arg
+" c - Command-line
+" t - Terminal-Job
+" None - Normal, Visual, Select, Operator-pending
+"
+" [nvsxoilct]noremap - Don't recursively map if recursive mapping is on
+" [nvsxoilct]map
+" [nvsxoilct]unmap
+" [nvsxoilct]mapclear
+
+" Happy pinkie.
+nnoremap : ;
 nnoremap ; :
-inoremap jj <ESC>
+vnoremap : ;
+vnoremap ; :
 
-" Disable arrows.
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
+" Quickly escape to normal mode
+inoremap jj <esc>
+inoremap jk <esc>
 
 " Navigate displayed lines.
 nnoremap j gj
 nnoremap k gk
 
 " Navigate windows.
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " Resize windows.
-nnoremap <silent> <leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <left> :vertical resize +5<cr>
+nnoremap <silent> <down> :horizontal resize +5<cr>
+nnoremap <silent> <up> :horizontal resize -5<cr>
+nnoremap <silent> <right> :vertical resize -5<cr>
 
 " Match bracket pairs.
-nnoremap <tab> %
-vnoremap <tab> %
+"nnoremap <tab> %
+"vnoremap <tab> %
 
 " Toggle fold.
-nnoremap <space> za
-vnoremap <space> za
-
-" Clear last search.
-nnoremap <silent> <leader><space> :noh<CR>
-
-" Quickly close the current window.
-nnoremap <leader>q :q<CR>
+nnoremap <tab> za
+vnoremap <tab> za
 
 " Quickly write the current buffer.
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :w<cr>
+
+" Quickly close the current window.
+nnoremap <leader>q :q<cr>
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Clear last search.
+nnoremap <silent> <leader>/ :noh<cr>
 
 " Delete a line without adding it to the yanked stack.
 nnoremap <silent> <leader>d "_d
@@ -111,130 +273,166 @@ vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 
 " Toggle paste.
-nnoremap <leader>i :set invpaste paste?<CR>
+nnoremap <leader>i :set invpaste paste?<cr>
+
+" Open terminal.
+nnoremap <silent> <leader>th :horizontal terminal ++close<cr>
+nnoremap <silent> <leader>tv :vertical terminal ++close<cr>
 
 " Strip trailing whitespace.
-function! StripWhitespace()
-  let save_cursor=getpos(".")
-  let old_query=getreg("/")
-  :%s/\s\+$//e
-  call setpos(".", save_cursor)
-  call setreg("/", old_query)
+function! TrimWhitespace()
+  let l:save=winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
 endfunction
-nnoremap <silent> <leader>s :call StripWhitespace()<CR>
+nnoremap <silent> <leader>s :call TrimWhitespace()<cr>
 
-" ------------------------------------------------------------------------------
-" AUTOWRITE
+" }}}
+
+" AUTOSAVE {{{
 " ------------------------------------------------------------------------------
 
-" Write on buffer leave or blur.
+" Write on many commands.
+set autowriteall
+
+" Write also on buffer leave or focus lost.
 autocmd BufLeave,FocusLost * silent! wa
 
-" ------------------------------------------------------------------------------
-" FOLDING
-" ------------------------------------------------------------------------------
+" }}}
 
-" Fold by indentation.
-set foldmethod=indent
-set foldenable
-
-" Expand all folds.
-autocmd BufEnter * let &foldlevel=max(map(range(1, line('$')), 'foldlevel(v:val)'))
-
-" ------------------------------------------------------------------------------
-" VIMDIFF
+" CTRLP {{{
 " ------------------------------------------------------------------------------
 
-" Mappings.
-nnoremap <leader>dl :diffget LO<CR>
-nnoremap <leader>dr :diffget RE<CR>
-nnoremap <leader>db :diffget BA<CR>
+nnoremap <silent> <leader>ff :CtrlP<cr>
+nnoremap <silent> <leader>fb :CtrlPBuffer<cr>
 
-" ------------------------------------------------------------------------------
-" RIPGREP
-" ------------------------------------------------------------------------------
+" }}}
 
-" Mappings.
-nnoremap <leader>g :Rg<space>
-
-" ------------------------------------------------------------------------------
-" NERDTREE
+" NERDTREE {{{
 " ------------------------------------------------------------------------------
 
-" Mappings.
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>m :NERDTreeFind<CR>
+nnoremap <silent> <leader>e :NERDTreeToggle<cr>
+nnoremap <silent> <leader>o :NERDTreeFind<cr>
 
 " Show hidden files by default.
 let NERDTreeShowHidden=1
 
-" Open on startup if no files were specified.
-autocmd VimEnter * if !argc() | NERDTree | endif
+" Show on the right.
+let NERDTreeWinPos='right'
 
-" Quit if only buffer left.
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Quit if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
-" ------------------------------------------------------------------------------
-" TAGBAR
-" ------------------------------------------------------------------------------
+" }}}
 
-" Mappings.
-nnoremap <leader>t :TagbarToggle<CR>
-
-" ------------------------------------------------------------------------------
-" SYNTASTIC
+" RIPGREP {{{
 " ------------------------------------------------------------------------------
 
-" Sensible defaults.
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+nnoremap <leader>g :Rg<space>
 
-" Checkers.
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_lua_checkers = ['luac', 'luacheck']
+" }}}
 
-" ------------------------------------------------------------------------------
-" SLIME
+" VIMDIFF {{{
 " ------------------------------------------------------------------------------
 
-" Use tmux.
-let g:slime_target = "tmux"
+nnoremap <silent> <leader>dl :diffget LOCAL<cr>
+nnoremap <silent> <leader>db :diffget BASE<cr>
+nnoremap <silent> <leader>dr :diffget REMOTE<cr>
 
-" Set default config.
-let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+" }}}
 
+" COLOR SCHEME {{{
 " ------------------------------------------------------------------------------
-" APPEARANCE
-" ------------------------------------------------------------------------------
 
-" Invisible chars.
-set listchars=""
-set listchars+=tab:>-
-set listchars+=eol:¬
-set listchars+=trail:Ø
-set listchars+=extends:>
-set listchars+=precedes:<
-set list
-
-" Long lines.
-set colorcolumn=101
-
-" Colors.
-set background=dark
-
-" Status line.
-if has("statusline") && !&cp
-  set statusline=
-  set statusline+=%3.3n\                         " Buffers
-  set statusline+=%f\                            " Filename
-  set statusline+=%m%r\                          " Flags
-  set statusline+=%{fugitive#statusline()}\      " Fugitive status
-  set statusline+=%{SyntasticStatuslineFlag()}\  " Syntastic status
-  set statusline+=%=
-  set statusline+=[%p%%]                         " Percentage
-  set statusline+=[%l/%L]\                       " Line
-  set statusline+=[%v]                           " Column
-  set statusline+=[0x%04B]\                      " Character
-  set statusline+=%*
+if has('termguicolors')
+  set termguicolors
 endif
+
+colorscheme catppuccin_mocha
+
+" }}}
+
+" STATUS LINE {{{
+" ------------------------------------------------------------------------------
+
+if has('statusline') && !&compatible
+  " We're showing the mode in the status line.
+  set noshowmode
+
+  set statusline=
+  set statusline+=%2*\ %{StatuslineMode()}\ %1*        " mode
+  set statusline+=%3.3n                                " buffer number
+  set statusline+=\ %<%f                               " file path
+  set statusline+=%(\ %3*%h%m%r%1*%)                   " flags
+  set statusline+=%(\ %4*%{fugitive#Statusline()}%1*%) " git status
+
+  set statusline+=%=
+
+  set statusline+=%5*\ %Y\ %1*                         " file type
+  set statusline+=%6*\ 0x%04B\ %1*                     " char under cursor
+  set statusline+=%7*\ %7.(%l:%v%)\ %1*                " line and column
+  set statusline+=%8*\ %3.3P\ %1*                      " % through file
+
+  let s:rosewater='#F5E0DC'
+  let s:flamingo='#F2CDCD'
+  let s:pink='#F5C2E7'
+  let s:mauve='#CBA6F7'
+  let s:red='#F38BA8'
+  let s:maroon='#EBA0AC'
+  let s:peach='#FAB387'
+  let s:yellow='#F9E2AF'
+  let s:green='#A6E3A1'
+  let s:teal='#94E2D5'
+  let s:sky='#89DCEB'
+  let s:sapphire='#74C7EC'
+  let s:blue='#89B4FA'
+  let s:lavender='#B4BEFE'
+
+  let s:text='#CDD6F4'
+  let s:subtext1='#BAC2DE'
+  let s:subtext0='#A6ADC8'
+  let s:overlay2='#9399B2'
+  let s:overlay1='#7F849C'
+  let s:overlay0='#6C7086'
+  let s:surface2='#585B70'
+  let s:surface1='#45475A'
+  let s:surface0='#313244'
+
+  let s:base='#1E1E2E'
+  let s:mantle='#181825'
+  let s:crust='#11111B'
+
+  let s:mode_map={
+    \ 'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK',
+    \ 'c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL'
+  \ }
+
+  function! StatuslineMode()
+    return get(s:mode_map, mode(), 'NORMAL')
+  endfunction
+
+  function! StatuslineColor(group, guifg, guibg)
+    execute 'highlight ' . a:group . ' guifg=' . a:guifg . ' guibg=' . a:guibg
+  endfunction
+
+  function! StatuslineColors()
+    call StatuslineColor('User1', s:text,     s:mantle)    " default
+    call StatuslineColor('User2', s:mantle,   s:blue)      " mode
+    call StatuslineColor('User3', s:overlay2, s:mantle)    " flags
+    call StatuslineColor('User4', s:mauve,    s:mantle)    " git status
+    call StatuslineColor('User5', s:overlay2, s:mantle)    " file type
+    call StatuslineColor('User6', s:mantle,   s:maroon)    " char under cursor
+    call StatuslineColor('User7', s:mantle,   s:flamingo)  " line and column
+    call StatuslineColor('User8', s:mantle,   s:rosewater) " % through file
+  endfunction
+
+  augroup StatuslineColors
+    autocmd!
+    autocmd VimEnter,ColorScheme * call StatuslineColors()
+  augroup end
+endif
+
+" }}}
+
+" vim: set foldmethod=marker:
