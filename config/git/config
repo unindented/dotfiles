@@ -6,6 +6,8 @@
 [alias]
   a = add
   ap = add --patch
+  b = branch
+  bb = !git for-each-ref --color --sort=-committerdate --format=$'%(color:red)%(ahead-behind:origin/HEAD)\t%(color:green)%(refname:short)\t%(color:yellow)%(committerdate:relative)' refs/heads | sed 's/ /\t/' | column -s $'\t' -t
   c = commit
   co = checkout
   d = diff
@@ -16,12 +18,13 @@
   fubar = reset --hard
   l = log --oneline --graph --decorate --max-count=20
   ll = log --oneline --graph --decorate
+  me = !git log --oneline --graph --decorate --author="$(git config user.email)"
   s = status --branch --short --untracked=no
   ss = status
 
 [core]
-  attributesfile = ~/.gitattributes
-  excludesfile = ~/.gitignore
+  attributesfile = ~/.config/git/attributes
+  excludesfile = ~/.config/git/ignore
   whitespace = space-before-tab,trailing-space
 
 [init]
@@ -41,8 +44,8 @@
 
 [push]
   default = simple
-  followTags = true
   autoSetupRemote = true
+  followTags = true
 
 [merge]
   tool = vimdiff

@@ -5,49 +5,73 @@
 # Enable aliases to be sudo'ed.
 alias sudo='sudo '
 
-# Shortcuts.
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Grep colors.
+# ------------------------------------------------------------------------------
+# LS
+# ------------------------------------------------------------------------------
+
+if [[ "$OSTYPE" =~ ^darwin && -n $(command -v gls) ]]; then
+  alias ls='gls --color=auto --group-directories-first'
+elif [[ "$OSTYPE" =~ ^darwin ]]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color=auto --group-directories-first'
+fi
+
+alias l='lsd -F'
+alias lt='lsd -F --tree'
+alias la='lsd -A'
+alias lat='lsd -A --tree'
+alias ll='lsd -alF'
+alias llt='lsd -alF --tree'
+alias lr='lsd -Alrt'
+alias lrt='lsd -Alrt --tree'
+
+# ------------------------------------------------------------------------------
+# GREP
+# ------------------------------------------------------------------------------
+
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# List colors (system specific).
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  export LSCOLORS='exfxcxdxbxegedabagacad'
-  alias ls='ls -G'
-else
-  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
-  alias ls='ls --color=auto'
+# ------------------------------------------------------------------------------
+# MKDIR
+# ------------------------------------------------------------------------------
+
+alias mkdir='mkdir -p'
+
+# ------------------------------------------------------------------------------
+# OPEN
+# ------------------------------------------------------------------------------
+
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  if grep -q Microsoft /proc/version; then
+    alias open='explorer.exe'
+  else
+    alias open='xdg-open'
+  fi
 fi
 
-# List aliases.
-alias ls='lsd'
-alias l='ls -F'
-alias lt='ls -F --tree'
-alias la='ls -A'
-alias lat='ls -A --tree'
-alias ll='ls -alF'
-alias llt='ls -alF --tree'
-alias lr='ls -Alrt'
-alias lrt='ls -Alrt --tree'
+# ------------------------------------------------------------------------------
+# OTHERS
+# ------------------------------------------------------------------------------
 
-# Utility aliases.
+# Common shortcuts.
 alias df='df -h'
 alias du='du -h'
+alias e='emacs -nw'
 alias f='find . -name'
+alias fp='fzf --preview-window "66%" --preview="bat -f {}" --bind shift-up:preview-page-up,shift-down:preview-page-down'
 alias g='git'
 alias h='history | tail -20'
 alias hf='history | grep -i'
 alias hh='history'
 alias s='stat -f "%z bytes"'
 alias v='vim'
-
-# Other useful aliases.
-alias mkdir='mkdir -p'
 
 # Encode/decode text.
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
@@ -57,7 +81,7 @@ alias localip='ipconfig getifaddr en0'
 alias remoteip='curl icanhazip.com'
 
 # Weather.
-alias weather='curl wttr.in?m'
+alias weather='curl wttr.in/Seattle?m'
 alias moon='curl wttr.in/Moon'
 
 # ------------------------------------------------------------------------------

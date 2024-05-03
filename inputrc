@@ -1,6 +1,9 @@
 # Filename matching and completion in a case-insensitive fashion.
 set completion-ignore-case on
 
+# Treat hyphens and underscores as equivalent.
+set completion-map-case on
+
 # Don't ask whether the list of possibilities should be displayed if 200 items
 # or less.
 set completion-query-items 200
@@ -35,6 +38,10 @@ set skip-completed-text on
 # possible completions.
 set visible-stats on
 
+# Display possible completions using different colors to indicate their file
+# type.
+set colored-stats on
+
 # Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'.
 set convert-meta off
 set input-meta on
@@ -43,6 +50,10 @@ set output-meta on
 # Navigate history with arrows.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+# Option + left/right arrow keys to move the cursor wordwise.
+"\e\e[C": forward-word
+"\e\e[D": backward-word
 
 # Vi editing mode.
 # set editing-mode vi
