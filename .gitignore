@@ -1,6 +1,7 @@
 config/*
 !config/alacritty
 !config/bat
+!config/btop
 !config/doom
 !config/emacs
 !config/git
