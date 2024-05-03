@@ -48,8 +48,8 @@ umask 0022
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 # History options.
-HISTSIZE=1000000
-HISTFILESIZE=1000000
+HISTSIZE=-1
+HISTFILESIZE=-1
 HISTCONTROL=ignoredups
 HISTIGNORE='l:ll:ls:bg:fg'
 
@@ -69,7 +69,10 @@ fi
 export EDITOR
 
 # Pager.
-if [[ -n "$(command -v less)" ]]; then
+if [[ -n "$(command -v less)" && -n "$(command -v bat)" ]]; then
+  PAGER="less -FirSwX"
+  MANPAGER="sh -c 'col -bx | bat -l man -p'"
+elif [[ -n "$(command -v less)" ]]; then
   PAGER="less -FirSwX"
   MANPAGER="less -FiRswX"
 else
