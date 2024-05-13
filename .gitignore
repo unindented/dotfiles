@@ -9,6 +9,7 @@ config/*
 !config/lsd
 !config/nvim
 !config/tmux
+!config/wezterm
 !config/starship.toml
 local/*
 !local/bin
