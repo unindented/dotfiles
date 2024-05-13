@@ -5,6 +5,7 @@ config/*
 !config/doom
 !config/emacs
 !config/git
+!config/kitty
 !config/lsd
 !config/nvim
 !config/tmux
