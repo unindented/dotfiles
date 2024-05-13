@@ -8,6 +8,7 @@ config/*
 !config/git
 !config/kitty
 !config/lsd
+!config/mise
 !config/nvim
 !config/tmux
 !config/wezterm

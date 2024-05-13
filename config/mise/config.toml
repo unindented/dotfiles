@@ -1,0 +1,6 @@
+[tools]
+go = "1.22"
+java = "microsoft-21"
+node = "20"
+python = "3.12"
+ruby = "3.3"
