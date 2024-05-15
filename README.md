@@ -16,6 +16,14 @@ cd ~/.dotfiles
 
 It will symlink the appropriate files in `.dotfiles` to your home directory.
 
+## macOS
+
+If you're on macOS and have [Homebrew](https://brew.sh/) installed, you can run the following to install all the apps declared in `Brewfile`:
+
+```
+brew bundle
+```
+
 ## Meta
 
 - Code: `git clone git@github.com:unindented/dotfiles.git`
