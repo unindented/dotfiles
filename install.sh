@@ -1,33 +1,47 @@
 #!/bin/sh
 
-ignorefiles="docs,install.sh,LICENSE,README.md"
+ignore="docs,install.sh,LICENSE,README.md"
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
 for name in *; do
   target="$HOME/.$name"
+  # If the target exists...
   if [ -e "$target" ]; then
+    # ... and it's not a symlink...
     if [ ! -L "$target" ]; then
-      cutline=`grep -n -m1 "$cutstring" "$target" | sed "s/:.*//"`
-      if [ -n "$cutline" ]; then
-        cutline=$((cutline-1))
+      # ... find the cutstring in the target.
+      linesabove=$(grep -m 1 -n "$cutstring" "$target" | sed "s/:.*//")
+      # If we found the cutstring...
+      if [ -n "$linesabove" ]; then
         echo "Updating $target"
-        head -n $cutline "$target" > update_tmp
-        startline=`sed '1!G;h;$!d' "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
-        if [ -n "$startline" ]; then
-          tail -n $startline "$name" >> update_tmp
+        # ... copy it and the lines above it to a temp file.
+        tmp=$(mktemp)
+        head -n "$linesabove" "$target" >"$tmp"
+        # Then find the cutstring in the (reversed) source.
+        linesbelow=$(sed '1!G;h;$!d' "$name" | grep -m 1 -n "$cutstring" | sed "s/:.*//")
+        # If we found the cutstring, append the lines below it to the temp file.
+        if [ -n "$linesbelow" ]; then
+          tail -n "$((linesbelow - 1))" "$name" >>"$tmp"
+        # If we didn't find the cutstring, append the whole file to the temp file.
         else
-          cat "$name" >> update_tmp
+          cat "$name" >>"$tmp"
         fi
-        mv update_tmp "$target"
+        # Finally, move the temp file to the target destination.
+        mv "$tmp" "$target"
+      # If we didn't find the cutstring in the target, show a warning and do nothing.
       else
         echo "WARNING: $target exists but is not a symlink"
       fi
     fi
+  # If the target doesn't exist...
   else
-    if [ -z "$(echo "$ignorefiles" | grep "\b$name\b")" ]; then
+    # ... and it's not ignored...
+    if ! echo "$ignore" | grep -q "\b$name\b"; then
       echo "Creating $target"
-      if [ -n "$(grep "$cutstring" "$name")" ]; then
+      # ... if it contains the cutstring, copy it.
+      if grep -q "$cutstring" "$name"; then
         cp "$PWD/$name" "$target"
+      # ... if it doesn't contain the cutstring, symlink it.
       else
         ln -s "$PWD/$name" "$target"
       fi
