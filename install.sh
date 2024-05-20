@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-ignore="docs,install.sh,LICENSE,README.md"
+ignore="docs,install.sh,macos.sh,LICENSE,README.md"
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
 for name in *; do

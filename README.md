@@ -24,6 +24,12 @@ If you're on macOS and have [Homebrew](https://brew.sh/) installed, you can run 
 brew bundle
 ```
 
+You can also run the `macos.sh` script to tweak some macOS settings:
+
+```
+./macos.sh
+```
+
 ## Meta
 
 - Code: `git clone git@github.com:unindented/dotfiles.git`
