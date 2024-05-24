@@ -18,9 +18,13 @@
   fubar = reset --hard
   l = log --oneline --graph --decorate --max-count=20
   ll = log --oneline --graph --decorate
+  pl = pull
+  ps = push
+  psf = push --force-with-lease --force-if-includes
   me = !git log --oneline --graph --decorate --author="$(git config user.email)"
   s = status --branch --short --untracked=no
   ss = status
+  sup = submodule update --init --recursive --remote --rebase
 
 [core]
   attributesfile = ~/.config/git/attributes
