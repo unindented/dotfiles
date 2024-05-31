@@ -213,11 +213,15 @@ complete -F _tm tm
 # Usage: motd
 # Message of the day.
 motd() {
-  local _msg
-  _msg="$(uname -mnpsr)\n$(uptime)"
-  if [[ -n "$(command -v cowsay)" ]]; then
-    echo -e "$_msg" | cowsay -n -f bunny
+  if [[ -n "$(command -v fastfetch)" ]]; then
+    fastfetch -c ~/.config/fastfetch/motd.jsonc
   else
-    echo -e "$_msg"
+    local _msg
+    _msg="$(uname -mnpsr)\n$(uptime)"
+    if [[ -n "$(command -v cowsay)" ]]; then
+      echo -e "$_msg" | cowsay -n -f bunny
+    else
+      echo -e "$_msg"
+    fi
   fi
 }
