@@ -4,6 +4,7 @@ config/*
 !config/btop
 !config/doom
 !config/emacs
+!config/fastfetch
 !config/git
 !config/kitty
 !config/lsd
