@@ -169,11 +169,11 @@ decrypt() {
 # Push this box's SSH public key to other boxes.
 certpush() {
   if [[ $# -gt 0 ]]; then
-    [[ -f "$HOME/.ssh/id_rsa.pub" ]] || ssh-keygen -t rsa -C ''
+    [[ -f "$HOME/.ssh/id_ed25519.pub" ]] || ssh-keygen -t ed25519 -C ''
     local _host
     for _host in "$@"; do
       echo "$_host"
-      ssh "$_host" 'mkdir -p ~/.ssh && chmod 0700 ~/.ssh && cat >> ~/.ssh/authorized_keys' <"$HOME/.ssh/id_rsa.pub"
+      ssh "$_host" 'mkdir -p ~/.ssh && chmod 0700 ~/.ssh && cat >> ~/.ssh/authorized_keys' <"$HOME/.ssh/id_ed25519.pub"
     done
   else
     echo 'Usage: certpush <[user@]host>...' && return 1
