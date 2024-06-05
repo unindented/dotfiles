@@ -1,4 +1,5 @@
 IdentitiesOnly yes
+AddKeysToAgent yes
 UseKeychain yes
 
 Host bitbucket.org
@@ -8,6 +9,10 @@ Host bitbucket.org
 Host github.com
   User git
   IdentityFile ~/.ssh/github.key
+
+Host gitlab.com
+  User git
+  IdentityFile ~/.ssh/gitlab.key
 
 Host unindented
   HostName ssh.unindented.org
