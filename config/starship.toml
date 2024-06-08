@@ -1,36 +1,16 @@
 [custom.arm64]
 symbol = "arm64"
-style = "none"
-format = '\[[$symbol($output )]($style)\] '
+style = "bold blue"
+format = 'on [$symbol($output )]($style) '
 when = '[ "$(arch)" == "arm64" ]'
 os = "macos"
 
 [custom.i386]
 symbol = "i386"
-style = "none"
-format = '\[[$symbol($output )]($style)\] '
+style = "bold blue"
+format = 'on [$symbol($output )]($style) '
 when = '[ "$(arch)" == "i386" ]'
 os = "macos"
-
-[character]
-success_symbol = "[>](bold green)"
-error_symbol = "[x](bold red)"
-vimcmd_symbol = "[<](bold green)"
-
-[directory]
-read_only = " ro"
-fish_style_pwd_dir_length = 1
-truncate_to_repo = false
-
-[git_commit]
-tag_symbol = " tag "
-
-[git_status]
-ahead = ">"
-behind = "<"
-diverged = "<>"
-renamed = "r"
-deleted = "x"
 
 [aws]
 symbol = "aws "
@@ -38,11 +18,25 @@ symbol = "aws "
 [azure]
 symbol = "az "
 
+[buf]
+symbol = "buf "
+
 [bun]
 symbol = "bun "
 
 [c]
 symbol = "C "
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
+vimcmd_replace_one_symbol = "[<](bold purple)"
+vimcmd_replace_symbol = "[<](bold purple)"
+vimcmd_visual_symbol = "[<](bold yellow)"
+
+[cmake]
+symbol = "cmake "
 
 [cobol]
 symbol = "cobol "
@@ -50,11 +44,11 @@ symbol = "cobol "
 [conda]
 symbol = "conda "
 
+[container]
+symbol = "cont "
+
 [crystal]
 symbol = "cr "
-
-[cmake]
-symbol = "cmake "
 
 [daml]
 symbol = "daml "
@@ -65,17 +59,25 @@ symbol = "dart "
 [deno]
 symbol = "deno "
 
-[dotnet]
-symbol = ".NET "
+[directory]
+read_only = " ro"
+fish_style_pwd_dir_length = 1
+truncate_to_repo = false
 
 [docker_context]
 symbol = "docker "
+
+[dotnet]
+symbol = ".NET "
 
 [elixir]
 symbol = "exs "
 
 [elm]
 symbol = "elm "
+
+[erlang]
+symbol = "erl "
 
 [fennel]
 symbol = "fnl "
@@ -89,6 +91,19 @@ symbol = "gcp "
 [git_branch]
 symbol = "git "
 
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[gleam]
+symbol = "gleam "
+
 [golang]
 symbol = "go "
 
@@ -98,11 +113,26 @@ symbol = "gradle "
 [guix_shell]
 symbol = "guix "
 
+[haskell]
+symbol = "hs "
+
+[haxe]
+symbol = "haxe "
+
+[helm]
+symbol = "helm "
+
 [hg_branch]
 symbol = "hg "
 
+[hostname]
+ssh_symbol = "ssh "
+
 [java]
 symbol = "java "
+
+[jobs]
+symbol = "jobs "
 
 [julia]
 symbol = "jl "
@@ -110,11 +140,11 @@ symbol = "jl "
 [kotlin]
 symbol = "kt "
 
+[kubernetes]
+symbol = "k8s "
+
 [lua]
 symbol = "lua "
-
-[nodejs]
-symbol = "nodejs "
 
 [memory_usage]
 symbol = "memory "
@@ -122,17 +152,29 @@ symbol = "memory "
 [meson]
 symbol = "meson "
 
+[nats]
+symbol = "nats "
+
 [nim]
 symbol = "nim "
 
 [nix_shell]
 symbol = "nix "
 
+[nodejs]
+symbol = "nodejs "
+
 [ocaml]
 symbol = "ml "
 
+[odin]
+symbol = "odin "
+
 [opa]
 symbol = "opa "
+
+[openstack]
+symbol = "cloud "
 
 [os.symbols]
 AIX = "aix "
@@ -210,6 +252,12 @@ symbol = "quarto "
 [raku]
 symbol = "raku "
 
+[red]
+symbol = "red "
+
+[rlang]
+symbol = "r "
+
 [ruby]
 symbol = "rb "
 
@@ -219,26 +267,39 @@ symbol = "rs "
 [scala]
 symbol = "scala "
 
-[spack]
-symbol = "spack "
+[shlvl]
+symbol = "shlvl "
+
+[singularity]
+symbol = "sy "
 
 [solidity]
-symbol = "solidity "
+symbol = "sol "
+
+[spack]
+symbol = "spack "
 
 [status]
 symbol = "[x](bold red) "
 
 [sudo]
+disabled = false
 symbol = "sudo "
 
 [swift]
 symbol = "swift "
 
-[typst]
-symbol = "typst "
-
 [terraform]
-symbol = "terraform "
+symbol = "terra "
+
+[typst]
+symbol = "typ "
+
+[vagrant]
+symbol = "vag "
+
+[vlang]
+symbol = "v "
 
 [zig]
 symbol = "zig "
