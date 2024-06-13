@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# alias: brew dump
+#:  * `dump` [args...]
+#:    `brew dump` is an alias for `brew bundle dump`
+brew bundle dump --global --force --all --describe $*
