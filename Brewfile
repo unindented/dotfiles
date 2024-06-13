@@ -1,3 +1,7 @@
+# Taps
+tap "homebrew/aliases"
+tap "homebrew/bundle"
+
 # General apps
 brew "mas" # Mac App Store command-line interface -- https://github.com/mas-cli/mas
 brew "syncthing" # Open source continuous file synchronization application -- https://syncthing.net/

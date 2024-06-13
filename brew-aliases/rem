@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# alias: brew rem
+#:  * `rem` [args...]
+#:    `brew rem` is an alias for `brew uninstall && brew dump`
+brew uninstall $*
+brew dump
