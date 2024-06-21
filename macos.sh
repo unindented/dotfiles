@@ -178,6 +178,15 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
+# Disable Mission Control shortcut (^↑)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 32 '<dict><key>enabled</key><false/></dict>'
+# Disable Application windows shortcut (^↓)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 33 '<dict><key>enabled</key><false/></dict>'
+# Disable Move left a space shortcut (^←)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 '<dict><key>enabled</key><false/></dict>'
+# Disable Move right a space shortcut (^→)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '<dict><key>enabled</key><false/></dict>'
+
 # ------------------------------------------------------------------------------
 # Energy saving
 # ------------------------------------------------------------------------------
