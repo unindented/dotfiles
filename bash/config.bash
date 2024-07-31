@@ -37,24 +37,31 @@ set -o notify
 umask 0022
 
 # ------------------------------------------------------------------------------
-# ENVIRONMENT CONFIGURATION
+# COLORS
 # ------------------------------------------------------------------------------
 
-# Encoding options.
+export TERM="xterm-256color"
+
+# ------------------------------------------------------------------------------
+# ENCODING
+# ------------------------------------------------------------------------------
+
 : ${LANG:="en_US.UTF-8"}
 : ${LANGUAGE:="en"}
 : ${LC_CTYPE:="en_US.UTF-8"}
 : ${LC_ALL:="en_US.UTF-8"}
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
-# History options.
+# ------------------------------------------------------------------------------
+# HISTORY
+# ------------------------------------------------------------------------------
+
 HISTSIZE=-1
 HISTFILESIZE=-1
-HISTCONTROL=ignoredups
 HISTIGNORE='l:ll:ls:bg:fg'
-
-# Terminal colors.
-export TERM="xterm-256color"
+HISTCONTROL=ignoredups:erasedups
+# https://unix.stackexchange.com/a/18443
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # ------------------------------------------------------------------------------
 # EDITOR AND PAGER
