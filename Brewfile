@@ -181,6 +181,7 @@ cask "firefox" # Web browser -- https://www.mozilla.org/firefox/
 cask "google-chrome" # Web browser -- https://www.google.com/chrome/
 cask "google-chrome@canary" # Web browser -- https://www.google.com/chrome/canary/
 cask "imageoptim" # Tool to optimise images to a smaller size -- https://imageoptim.com/mac
+cask "safari-technology-preview" # Web browser -- https://developer.apple.com/safari/resources/
 
 # Game dev casks
 cask "blender" # 3D creation suite -- https://www.blender.org/
