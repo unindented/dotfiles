@@ -1,11 +1,3 @@
-[submodule "config/doom"]
-	path = config/doom
-	url = https://github.com/unindented/doomemacs-config
-	branch = main
-[submodule "config/emacs"]
-	path = config/emacs
-	url = https://github.com/doomemacs/doomemacs
-	branch = master
 [submodule "config/nvim"]
 	path = config/nvim
 	url = https://github.com/unindented/neovim-config
