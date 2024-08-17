@@ -11,6 +11,27 @@ cask "bazecor" # Graphical configurator for Dygma Raise keyboards -- https://dyg
 #cask "blockblock" # Monitors common persistence locations -- https://objective-see.com/products/blockblock.html
 cask "discord" # Voice and text chat software -- https://discord.com/
 cask "figma" # Collaborative team software -- https://www.figma.com/
+cask "gpg-suite" # Tools to protect your emails and files -- https://gpgtools.org/
+cask "kap" # Open-source screen recorder built with web technology -- https://getkap.co/
+cask "knockknock" # Tool to show what is persistently installed on the computer -- https://objective-see.com/products/knockknock.html
+cask "monitorcontrol" # Tool to control external monitor brightness & volume -- https://github.com/MonitorControl/MonitorControl
+cask "netnewswire" # Free and open-source RSS reader -- https://netnewswire.com/
+cask "onyx" # Verify system files structure, run miscellaneous maintenance and more -- https://www.titanium-software.fr/en/onyx.html
+cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas -- https://rectangleapp.com/
+cask "the-unarchiver" # Unpacks archive files -- https://theunarchiver.com/
+cask "transmission" # Open-source BitTorrent client -- https://transmissionbt.com/
+cask "whatsyoursign" # Shows a files cryptographic signing information -- https://objective-see.com/products/whatsyoursign.html
+cask "zoom" # Video communication and virtual meeting platform -- https://www.zoom.us/
+# General MAS apps
+mas "Actions", id: 1_586_435_171 # https://sindresorhus.com/actions
+mas "Bitwarden", id: 1_137_397_744 # https://bitwarden.com/
+mas "Camera Preview", id: 1_632_827_132 # https://sindresorhus.com/camera-preview
+mas "Color Picker", id: 1_545_870_783 # https://sindresorhus.com/system-color-picker
+mas "Pandan", id: 1_569_600_264 # https://sindresorhus.com/pandan
+mas "Textual IRC Client", id: 1_262_957_439 # https://www.codeux.com/textual/
+mas "Vimari", id: 1_480_933_944 # https://televator.net/vimari/
+
+# Fonts
 cask "font-cascadia-code" # Monospaced font that includes programming ligatures -- https://github.com/microsoft/cascadia-code
 cask "font-cascadia-code-nf" # Version of Cascadia Code with embedded Nerd Fonts symbols -- https://github.com/microsoft/cascadia-code
 cask "font-cascadia-code-pl" # Version of Cascadia Code with embedded Powerline symbols -- https://github.com/microsoft/cascadia-code
@@ -36,25 +57,6 @@ cask "font-sf-pro" # Sans-serif variant of "San Francisco" by Apple -- https://d
 cask "font-source-code-pro" # Monospaced companion to Source Sans -- https://fonts.google.com/specimen/Source+Sans+Pro
 cask "font-source-sans-3" # Sans-serif typeface intended to work well in user interfaces -- https://fonts.google.com/specimen/Source+Sans+3
 cask "font-source-serif-4" # Serif companion to Source Sans -- https://fonts.google.com/specimen/Source+Serif+4
-cask "gpg-suite" # Tools to protect your emails and files -- https://gpgtools.org/
-cask "kap" # Open-source screen recorder built with web technology -- https://getkap.co/
-cask "knockknock" # Tool to show what is persistently installed on the computer -- https://objective-see.com/products/knockknock.html
-cask "monitorcontrol" # Tool to control external monitor brightness & volume -- https://github.com/MonitorControl/MonitorControl
-cask "netnewswire" # Free and open-source RSS reader -- https://netnewswire.com/
-cask "onyx" # Verify system files structure, run miscellaneous maintenance and more -- https://www.titanium-software.fr/en/onyx.html
-cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas -- https://rectangleapp.com/
-cask "the-unarchiver" # Unpacks archive files -- https://theunarchiver.com/
-cask "transmission" # Open-source BitTorrent client -- https://transmissionbt.com/
-cask "whatsyoursign" # Shows a files cryptographic signing information -- https://objective-see.com/products/whatsyoursign.html
-cask "zoom" # Video communication and virtual meeting platform -- https://www.zoom.us/
-# General MAS apps
-mas "Actions", id: 1_586_435_171 # https://sindresorhus.com/actions
-mas "Bitwarden", id: 1_137_397_744 # https://bitwarden.com/
-mas "Camera Preview", id: 1_632_827_132 # https://sindresorhus.com/camera-preview
-mas "Color Picker", id: 1_545_870_783 # https://sindresorhus.com/system-color-picker
-mas "Pandan", id: 1_569_600_264 # https://sindresorhus.com/pandan
-mas "Textual IRC Client", id: 1_262_957_439 # https://www.codeux.com/textual/
-mas "Vimari", id: 1_480_933_944 # https://televator.net/vimari/
 
 # Audio apps
 brew "flac" # Free lossless audio codec -- https://xiph.org/flac/
@@ -83,9 +85,9 @@ cask "epic-games" # Launcher for *Epic Games* games -- https://www.epicgames.com
 cask "steam" # Video game digital distribution service -- https://store.steampowered.com/about/
 
 # Emacs
-tap "railwaycat/emacsmacport"
-brew "emacs-mac", # Yamamoto Mitsuharu's macOS port of GNU Emacs -- https://bitbucket.org/mituharu/emacs-mac
-  args: ["with-emacs-big-sur-icon", "with-native-compilation", "with-no-title-bars"]
+tap "d12frosted/emacs-plus"
+brew "emacs-plus@30", # GNU Emacs text editor -- https://www.gnu.org/software/emacs/
+  args: ["--with-native-comp", "--with-imagemagick", "--with-elrumo2-icon"]
 
 # Vim
 brew "macvim" # GUI for Vim, made for macOS -- https://github.com/macvim-dev/macvim
