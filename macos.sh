@@ -786,6 +786,12 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 # ------------------------------------------------------------------------------
+# Hammerspoon.app
+# ------------------------------------------------------------------------------
+
+defaults write org.hammerspoon.Hammerspoon MJConfigFile -string "${HOME}/.config/hammerspoon/init.lua"
+
+# ------------------------------------------------------------------------------
 # Transmission.app
 # ------------------------------------------------------------------------------
 
