@@ -6,6 +6,7 @@ config/*
 !config/emacs
 !config/fastfetch
 !config/git
+!config/hammerspoon
 !config/kitty
 !config/lsd
 !config/mise
