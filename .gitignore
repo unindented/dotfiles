@@ -1,6 +1,9 @@
 config/*
 !config/alacritty
 !config/bat
+!config/beets
+config/beets/library.db
+config/beets/state.pickle
 !config/btop
 !config/doom
 !config/emacs

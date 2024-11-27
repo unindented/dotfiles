@@ -1,0 +1,18 @@
+directory: /Volumes/Stuff/Music
+import:
+  write: yes
+  copy: yes
+  timid: yes
+  resume: no
+  incremental: no
+match:
+  preferred:
+    countries: ["US", "GB|UK"]
+    media: ["CD", "Digital Media|File"]
+    original_year: yes
+  ignored: missing_tracks unmatched_tracks
+paths:
+  default: $albumartist/$album%aunique{}/$track $title
+  singleton: Non-Album/$artist/$title
+  comp: Various Artists/$album%aunique{}/$track $title
+  albumtype:soundtrack: Various Artists/$album%aunique{}/$track $title
