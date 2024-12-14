@@ -11,6 +11,7 @@ config/beets/state.pickle
 !config/fastfetch
 !config/git
 !config/hammerspoon
+!config/helix
 !config/kitty
 !config/lsd
 !config/mise
