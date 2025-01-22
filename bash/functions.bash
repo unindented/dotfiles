@@ -225,3 +225,24 @@ motd() {
     fi
   fi
 }
+
+# ------------------------------------------------------------------------------
+# LLM
+# ------------------------------------------------------------------------------
+
+# Usage: gencommit
+# Generate commit message for the supplied diff.
+gencommit() {
+  local _input=""
+  if [[ -p /dev/stdin ]]; then
+    _input=$(cat)
+  elif [[ $# -eq 1 ]]; then
+    _input="$1"
+  fi
+  if [[ -n "$_input" ]]; then
+    local _prompt="You are a commit message generator. I will provide you with a diff containing changes I've made to my project, and you'll generate a commit message, in imperative mood, using at most 50 characters. Do not write any explanations, just reply with the commit message."
+    llm -m phi4 -s "$_prompt" "\`\`\`$_input\`\`\`"
+  else
+    echo -e "Usage: gencommit \"\$(git diff --cached)\"\n   or: jj diff --git | gencommit" && return 1
+  fi
+}
