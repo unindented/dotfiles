@@ -26,6 +26,8 @@ __git_complete g __git_main
 [[ -n $(command -v broot) ]] && eval "$(broot --print-shell-function bash)"
 # Init fzf.
 [[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
+# Init jj.
+[[ -n $(command -v jj) ]] && eval "$(jj util completion bash)"
 # Activate mise.
 [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 # Init starship.
