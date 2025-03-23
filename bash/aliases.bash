@@ -49,18 +49,14 @@ alias mkdir='mkdir -p'
 # ------------------------------------------------------------------------------
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  if grep -q Microsoft /proc/version; then
-    alias open='explorer.exe'
-  else
-    alias open='xdg-open'
-  fi
+  alias open='xdg-open'
 fi
 
 # ------------------------------------------------------------------------------
 # OTHERS
 # ------------------------------------------------------------------------------
 
-# Common shortcuts.
+alias c='code'
 alias df='df -h'
 alias du='du -h'
 alias e='emacs -nw'
@@ -70,6 +66,7 @@ alias g='git'
 alias h='history | tail -20'
 alias hf='history | grep -i'
 alias hh='history'
+alias n='nvim'
 alias s='stat -f "%z bytes"'
 alias v='vim'
 
