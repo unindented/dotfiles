@@ -155,6 +155,7 @@ brew "utm" # Virtual machines UI using QEMU -- https://mac.getutm.app/
 brew "watchman" # Watch files and take action when they change -- https://github.com/facebook/watchman
 brew "wget" # Internet file retriever -- https://www.gnu.org/software/wget/
 brew "xz" # General-purpose data compression with high compression ratio -- https://tukaani.org/xz/
+brew "yazi" # Blazing fast terminal file manager written in Rust, based on async I/O -- https://github.com/sxyazi/yazi
 brew "yt-dlp" # Feature-rich command-line audio/video downloader -- https://github.com/yt-dlp/yt-dlp
 brew "zellij" # Pluggable terminal workspace, with terminal multiplexer as the base feature -- https://zellij.dev
 brew "zlib" # General-purpose lossless data-compression library -- https://zlib.net/

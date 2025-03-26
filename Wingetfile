@@ -125,6 +125,9 @@
           "PackageIdentifier": "Starship.Starship"
         },
         {
+          "PackageIdentifier": "sxyazi.yazi"
+        },
+        {
           "PackageIdentifier": "TechPowerUp.GPU-Z"
         },
         {

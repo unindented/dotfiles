@@ -19,6 +19,7 @@ config/beets/state.pickle
 !config/tmux
 config/tmux/plugins
 !config/wezterm
+!config/yazi
 !config/zellij
 !config/starship.toml
 ssh/*
