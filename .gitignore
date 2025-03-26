@@ -20,8 +20,6 @@ config/tmux/plugins
 !config/wezterm
 !config/zellij
 !config/starship.toml
-local/*
-!local/bin
 ssh/*
 !ssh/config
 stack/*
