@@ -1,10 +1,11 @@
+[general]
 import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 
 [font]
 size = 18.0
-normal = { family = "Cascadia Code NF", style = "Regular" }
-bold = { family = "Cascadia Code NF", style = "Bold" }
-italic = { family = "Cascadia Code NF", style = "Italic" }
+normal = { family = "Cascadia Mono NF", style = "Regular" }
+bold = { family = "Cascadia Mono NF", style = "Bold" }
+italic = { family = "Cascadia Mono NF", style = "Italic" }
 
 [window]
 decorations = "none"

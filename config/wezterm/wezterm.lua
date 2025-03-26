@@ -41,10 +41,10 @@ config.visual_bell = {
 }
 
 -- Font settings.
-config.font = wezterm.font("Cascadia Mono")
+config.font = wezterm.font("Cascadia Mono NF")
 config.font_size = 18.0
 config.window_frame = {
-  font = wezterm.font("Cascadia Mono"),
+  font = wezterm.font("Cascadia Mono NF"),
   font_size = 18.0,
 }
 config.char_select_font_size = 18.0

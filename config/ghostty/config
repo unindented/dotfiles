@@ -22,7 +22,7 @@ copy-on-select = clipboard
 mouse-hide-while-typing = true
 
 # Font settings.
-font-family = Cascadia Mono
+font-family = Cascadia Mono NF
 font-size = 18
 # Adjust cell size.
 adjust-cell-width = -5%
