@@ -1,0 +1,44 @@
+# Color scheme.
+theme = light:catppuccin-latte,dark:catppuccin-mocha
+
+# Initial size.
+window-width = 120
+window-height = 36
+
+# Set the window padding.
+window-padding-x = 12
+window-padding-y = 12
+# Set the window background opacity and blur.
+background-opacity = 0.95
+background-blur = 32
+
+# Cursor settings.
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+# Copy on select.
+copy-on-select = clipboard
+# Hide cursor while typing.
+mouse-hide-while-typing = true
+
+# Font settings.
+font-family = Cascadia Mono
+font-size = 18
+# Adjust cell size.
+adjust-cell-width = -5%
+
+# Increase scrollback.
+scrollback-limit = 100000
+
+# Save state on exit.
+shell-integration = detect
+window-save-state = always
+
+# macOS-specific settings.
+macos-icon = custom-style
+macos-icon-ghost-color = cba6f7
+macos-icon-screen-color = 1e1e2e
+#macos-titlebar-style = hidden
+
+# Quick terminal.
+keybind = global:ctrl+grave_accent=toggle_quick_terminal

@@ -8,6 +8,7 @@ config/beets/state.pickle
 !config/doom
 !config/emacs
 !config/fastfetch
+!config/ghostty
 !config/git
 !config/hammerspoon
 !config/helix
