@@ -1,25 +1,24 @@
 #!/usr/bin/env pwsh
 
-$ignore = @("bash", "brew-aliases", "docs", "bashrc", "bash_profile", "inputrc", "install.ps1", "install.sh", "macos.sh", "profile.ps1", "Brewfile", "LICENSE", "README.md")
+$include = @("config", "pwsh", "ssh", "stack", "vim", "gemrc", "ghci", "iex.exs")
 
-Get-ChildItem -Path "." | Where-Object { $_.Name -notlike ".*" } | ForEach-Object {
-    $name = $_.Name
-    $target = "$env:USERPROFILE\.$name"
+foreach ($name in $include) {
+  $target = "$env:USERPROFILE\.$name"
+  $source = "$($PWD.Path)\$name"
 
-    if ($ignore -notcontains $name) {
-        # If the target already exists and is not a symlink, warn the user.
-        if (Test-Path $target) {
-            $item = Get-Item $target -Force
-            if (-not $item.LinkType) {
-                Write-Host "WARNING: $target exists but is not a symlink"
-            }
-        }
-        # If the target doesn't exist, create a symlink.
-        else {
-            Write-Host "Creating $target -> $($PWD.Path)\$name"
-            New-Item -ItemType SymbolicLink -Path $target -Target "$($PWD.Path)\$name"
-        }
+  # If the target already exists...
+  if (Test-Path $target) {
+    $item = Get-Item $target -Force
+    # ... and it's not a symlink, warn the user.
+    if (-not $item.LinkType) {
+      Write-Host "WARNING: $target exists but is not a symlink"
     }
+  }
+  # If the target doesn't exist, create a symlink.
+  else {
+    Write-Host "Creating $target -> $source"
+    New-Item -ItemType SymbolicLink -Path $target -Target $source
+  }
 }
 
 # Install PSFzf.

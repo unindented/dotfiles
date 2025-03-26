@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 
-ignore="docs,install.sh,macos.sh,LICENSE,README.md"
+include="bash brew-aliases config ssh stack vim bash_profile bashrc gemrc ghci iex.exs inputrc"
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
-for name in *; do
+for name in $include; do
   target="$HOME/.$name"
+
   # If the target exists...
   if [ -e "$target" ]; then
     # ... and it's not a symlink...
@@ -35,16 +36,13 @@ for name in *; do
     fi
   # If the target doesn't exist...
   else
-    # ... and it's not ignored...
-    if ! echo "$ignore" | grep -q "\b$name\b"; then
-      echo "Creating $target"
-      # ... if it contains the cutstring, copy it.
-      if grep -q "$cutstring" "$name"; then
-        cp "$PWD/$name" "$target"
-      # ... if it doesn't contain the cutstring, symlink it.
-      else
-        ln -s "$PWD/$name" "$target"
-      fi
+    echo "Creating $target"
+    # ... if it contains the cutstring, copy it.
+    if grep -q "$cutstring" "$name"; then
+      cp "$PWD/$name" "$target"
+    # ... if it doesn't contain the cutstring, symlink it.
+    else
+      ln -s "$PWD/$name" "$target"
     fi
   fi
 done
