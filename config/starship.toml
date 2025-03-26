@@ -1,3 +1,5 @@
+palette = "catppuccin_mocha"
+
 [custom.arm64]
 symbol = "arm64"
 style = "bold blue"
@@ -14,87 +16,140 @@ os = "macos"
 
 [aws]
 symbol = "aws "
+style = "bold peach"
 
 [azure]
 symbol = "az "
+style = "bold blue"
+
+[battery]
+full_symbol = "⣿ "
+charging_symbol = "⣦ "
+discharging_symbol = "⣄ "
+empty_symbol = "⣀ "
+unknown_symbol = "x "
+
+[[battery.display]]
+style = "bold red"
 
 [buf]
 symbol = "buf "
+style = "bold blue"
 
 [bun]
 symbol = "bun "
+style = "bold peach"
 
 [c]
-symbol = "C "
+symbol = "c "
+style = "bold blue"
 
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 vimcmd_symbol = "[<](bold green)"
-vimcmd_replace_one_symbol = "[<](bold purple)"
-vimcmd_replace_symbol = "[<](bold purple)"
+vimcmd_replace_one_symbol = "[<](bold mauve)"
+vimcmd_replace_symbol = "[<](bold mauve)"
 vimcmd_visual_symbol = "[<](bold yellow)"
 
 [cmake]
 symbol = "cmake "
+style = "bold sapphire"
+
+[cmd_duration]
+style = "bold yellow"
 
 [cobol]
 symbol = "cobol "
+style = "bold blue"
 
 [conda]
 symbol = "conda "
+style = "bold green"
 
 [container]
 symbol = "cont "
+style = "bold red"
 
 [crystal]
 symbol = "cr "
+style = "bold red"
 
 [daml]
 symbol = "daml "
+style = "bold teal"
 
 [dart]
 symbol = "dart "
+style = "bold sky"
 
 [deno]
 symbol = "deno "
+style = "bold green"
 
 [directory]
+style = "bold lavender"
 read_only = " ro"
 fish_style_pwd_dir_length = 1
 truncate_to_repo = false
 
+[direnv]
+symbol = "direnv "
+style = "bold yellow"
+
 [docker_context]
 symbol = "docker "
+style = "bold sky"
 
 [dotnet]
-symbol = ".NET "
+symbol = ".net "
+style = "bold mauve"
 
 [elixir]
-symbol = "exs "
+symbol = "ex "
+style = "bold mauve"
 
 [elm]
 symbol = "elm "
+style = "bold teal"
 
 [erlang]
 symbol = "erl "
+style = "bold maroon"
 
 [fennel]
 symbol = "fnl "
+style = "bold green"
 
 [fossil_branch]
-symbol = "fossil "
+symbol = "fsl "
+style = "bold mauve"
+
+[fossil_metrics]
+added_style = "bold green"
+deleted_style = "bold red"
 
 [gcloud]
 symbol = "gcp "
+style = "bold blue"
 
 [git_branch]
 symbol = "git "
+style = "bold mauve"
 
 [git_commit]
 tag_symbol = " tag "
+style = "bold green"
+
+[git_metrics]
+added_style = "bold green"
+deleted_style = "bold red"
+
+[git_state]
+style = "bold yellow"
 
 [git_status]
+style = "bold red"
 ahead = ">"
 behind = "<"
 diverged = "<>"
@@ -103,78 +158,115 @@ deleted = "x"
 
 [gleam]
 symbol = "gleam "
+style = "bold pink"
 
 [golang]
 symbol = "go "
+style = "bold sapphire"
 
 [gradle]
 symbol = "gradle "
+style = "bold teal"
 
 [guix_shell]
 symbol = "guix "
+style = "bold yellow"
 
 [haskell]
 symbol = "hs "
+style = "bold mauve"
 
 [haxe]
 symbol = "haxe "
+style = "bold peach"
 
 [helm]
 symbol = "helm "
+style = "bold text"
 
 [hg_branch]
 symbol = "hg "
+style = "bold mauve"
 
 [hostname]
 ssh_symbol = "ssh "
+style = "bold green"
 
 [java]
 symbol = "java "
+style = "bold maroon"
 
 [jobs]
 symbol = "jobs "
+style = "bold blue"
 
 [julia]
 symbol = "jl "
+style = "bold mauve"
 
 [kotlin]
 symbol = "kt "
+style = "bold lavender"
 
 [kubernetes]
 symbol = "k8s "
+style = "bold sky"
+
+[localip]
+style = "bold yellow"
 
 [lua]
 symbol = "lua "
+style = "bold blue"
 
 [memory_usage]
-symbol = "memory "
+format = "$symbol[$ram( | $swap)]($style) "
+symbol = "using "
+style = "bold sapphire"
+disabled = false
 
 [meson]
 symbol = "meson "
+style = "bold blue"
+
+[mojo]
+symbol = "mojo "
+style = "bold peach"
 
 [nats]
 symbol = "nats "
+style = "bold mauve"
 
 [nim]
 symbol = "nim "
+style = "bold yellow"
 
 [nix_shell]
 symbol = "nix "
+style = "bold sky"
 
 [nodejs]
-symbol = "nodejs "
+symbol = "node "
+style = "bold green"
 
 [ocaml]
 symbol = "ml "
+style = "bold yellow"
 
 [odin]
 symbol = "odin "
+style = "bold blue"
 
 [opa]
 symbol = "opa "
+style = "bold sapphire"
 
 [openstack]
 symbol = "cloud "
+style = "bold yellow"
+
+[os]
+style = "bold text"
 
 [os.symbols]
 AIX = "aix "
@@ -185,6 +277,7 @@ Amazon = "amz "
 Android = "andr "
 Arch = "rch "
 Artix = "atx "
+CachyOS = "cach "
 CentOS = "cent "
 Debian = "deb "
 DragonFly = "dfbsd "
@@ -206,6 +299,7 @@ MidnightBSD = "mid "
 Mint = "mint "
 NetBSD = "nbsd "
 NixOS = "nix "
+Nobara = "nbra "
 OpenBSD = "obsd "
 OpenCloudOS = "ocos "
 openEuler = "oeul "
@@ -222,84 +316,158 @@ SUSE = "suse "
 Ubuntu = "ubnt "
 Ultramarine = "ultm "
 Unknown = "unk "
+Uos = "uos "
 Void = "void "
 Windows = "win "
 
 [package]
 symbol = "pkg "
+style = "bold peach"
 
 [perl]
 symbol = "pl "
+style = "bold lavender"
 
 [php]
 symbol = "php "
+style = "bold mauve"
 
 [pijul_channel]
 symbol = "pijul "
+style = "bold mauve"
 
 [pulumi]
 symbol = "pulumi "
+style = "bold rosewater"
 
 [purescript]
 symbol = "purs "
+style = "bold text"
 
 [python]
 symbol = "py "
+style = "bold yellow"
 
 [quarto]
 symbol = "quarto "
+style = "bold blue"
 
 [raku]
 symbol = "raku "
+style = "bold lavender"
 
 [red]
 symbol = "red "
+style = "bold red"
 
 [rlang]
 symbol = "r "
+style = "bold sky"
 
 [ruby]
 symbol = "rb "
+style = "bold maroon"
 
 [rust]
 symbol = "rs "
+style = "bold peach"
 
 [scala]
 symbol = "scala "
+style = "bold red"
+
+[shell]
+style = "bold text"
 
 [shlvl]
 symbol = "shlvl "
+style = "bold yellow"
 
 [singularity]
 symbol = "sy "
+style = "bold blue"
 
 [solidity]
 symbol = "sol "
+style = "bold blue"
 
 [spack]
 symbol = "spack "
+style = "bold sapphire"
 
 [status]
-symbol = "[x](bold red) "
+symbol = "x"
+success_symbol = ""
+not_executable_symbol = "x"
+not_found_symbol = "?"
+sigint_symbol = "!"
+signal_symbol = "!"
+style = "bold red"
 
 [sudo]
-disabled = false
 symbol = "sudo "
+style = "bold yellow"
+disabled = false
 
 [swift]
 symbol = "swift "
+style = "bold peach"
 
 [terraform]
 symbol = "terra "
+style = "bold mauve"
+
+[time]
+format = '[\[$time\]]($style) '
+style = "bold yellow"
 
 [typst]
-symbol = "typ "
+symbol = "typst "
+style = "bold teal"
+
+[username]
+style_root = "bold red"
 
 [vagrant]
 symbol = "vag "
+style = "bold teal"
+
+[vcsh]
+symbol = ""
+style = "bold yellow"
 
 [vlang]
 symbol = "v "
+style = "bold sky"
 
 [zig]
 symbol = "zig "
+style = "bold yellow"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
