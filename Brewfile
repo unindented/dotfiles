@@ -1,20 +1,26 @@
 # Taps
 tap "homebrew/aliases"
 tap "homebrew/bundle"
+tap "d12frosted/emacs-plus"
 
 # General apps
 brew "mas" # Mac App Store command-line interface -- https://github.com/mas-cli/mas
 brew "syncthing" # Open source continuous file synchronization application -- https://syncthing.net/
 # General casks
 cask "appcleaner" # Application uninstaller -- https://freemacsoft.net/appcleaner/
-cask "bazecor" # Graphical configurator for Dygma Raise keyboards -- https://dygma.com/pages/programmable-split-keyboard
+cask "bazecor" # Graphical configurator for Dygma keyboards -- https://dygma.com/pages/programmable-split-keyboard
 #cask "blockblock" # Monitors common persistence locations -- https://objective-see.com/products/blockblock.html
 cask "discord" # Voice and text chat software -- https://discord.com/
 cask "figma" # Collaborative team software -- https://www.figma.com/
 cask "gpg-suite" # Tools to protect your emails and files -- https://gpgtools.org/
-cask "kap" # Open-source screen recorder built with web technology -- https://getkap.co/
+cask "hammerspoon" # Desktop automation application -- https://www.hammerspoon.org/
+cask "homerow" # Keyboard shortcuts for every button on your screen -- https://www.homerow.app/
+cask "jellyfin-media-player" # Jellyfin desktop client -- https://jellyfin.org/
+#cask "kap" # Open-source screen recorder built with web technology -- https://getkap.co/
 cask "knockknock" # Tool to show what is persistently installed on the computer -- https://objective-see.com/products/knockknock.html
+cask "localsend" # Open-source cross-platform alternative to AirDrop -- https://localsend.org/
 cask "monitorcontrol" # Tool to control external monitor brightness & volume -- https://github.com/MonitorControl/MonitorControl
+cask "mouseless" # Mouse control with the keyboard -- https://mouseless.click/
 cask "netnewswire" # Free and open-source RSS reader -- https://netnewswire.com/
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more -- https://www.titanium-software.fr/en/onyx.html
 cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas -- https://rectangleapp.com/
@@ -22,6 +28,7 @@ cask "the-unarchiver" # Unpacks archive files -- https://theunarchiver.com/
 cask "transmission" # Open-source BitTorrent client -- https://transmissionbt.com/
 cask "whatsyoursign" # Shows a files cryptographic signing information -- https://objective-see.com/products/whatsyoursign.html
 cask "zoom" # Video communication and virtual meeting platform -- https://www.zoom.us/
+cask "zotero" # Collect, organize, cite, and share research sources -- https://www.zotero.org/
 # General MAS apps
 mas "Actions", id: 1_586_435_171 # https://sindresorhus.com/actions
 mas "Bitwarden", id: 1_137_397_744 # https://bitwarden.com/
@@ -29,7 +36,7 @@ mas "Camera Preview", id: 1_632_827_132 # https://sindresorhus.com/camera-previe
 mas "Color Picker", id: 1_545_870_783 # https://sindresorhus.com/system-color-picker
 mas "Pandan", id: 1_569_600_264 # https://sindresorhus.com/pandan
 mas "Textual IRC Client", id: 1_262_957_439 # https://www.codeux.com/textual/
-mas "Vimari", id: 1_480_933_944 # https://televator.net/vimari/
+#mas "Vimari", id: 1_480_933_944 # https://televator.net/vimari/
 
 # Fonts
 cask "font-cascadia-code" # Monospaced font that includes programming ligatures -- https://github.com/microsoft/cascadia-code
@@ -58,6 +65,43 @@ cask "font-source-code-pro" # Monospaced companion to Source Sans -- https://fon
 cask "font-source-sans-3" # Sans-serif typeface intended to work well in user interfaces -- https://fonts.google.com/specimen/Source+Sans+3
 cask "font-source-serif-4" # Serif companion to Source Sans -- https://fonts.google.com/specimen/Source+Serif+4
 
+# Browser apps
+brew "emscripten" # LLVM bytecode to JavaScript compiler -- https://emscripten.org/
+brew "mozjpeg" # Improved JPEG encoder -- https://github.com/mozilla/mozjpeg
+brew "jpeg-xl" # New file format for still image compression -- https://jpeg.org/jpegxl/
+brew "wabt" # Web Assembly Binary Toolkit -- https://github.com/WebAssembly/wabt
+brew "webp" # Image format providing lossless and lossy compression for web images -- https://developers.google.com/speed/webp/
+# Browser casks
+cask "charles" # Web debugging Proxy application -- https://www.charlesproxy.com/
+cask "firefox" # Web browser -- https://www.mozilla.org/firefox/
+cask "google-chrome" # Web browser -- https://www.google.com/chrome/
+cask "google-chrome@canary" # Web browser -- https://www.google.com/chrome/canary/
+cask "imageoptim" # Tool to optimise images to a smaller size -- https://imageoptim.com/mac
+#cask "safari-technology-preview" # Web browser -- https://developer.apple.com/safari/resources/
+
+# Shell apps
+brew "bash" # Bourne-Again SHell, a UNIX command interpreter -- https://www.gnu.org/software/bash/
+brew "bash-completion" # Programmable completion for Bash -- https://salsa.debian.org/debian/bash-completion
+brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts -- https://www.shellcheck.net/
+brew "shfmt" # Autoformat shell script source code -- https://github.com/mvdan/sh
+
+# Terminal casks
+cask "alacritty" # GPU-accelerated terminal emulator -- https://github.com/alacritty/alacritty
+cask "ghostty" # Terminal emulator that uses platform-native UI and GPU acceleration -- https://ghostty.org/
+#cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app -- https://www.iterm2.com/
+cask "kitty" # GPU-based terminal emulator -- https://github.com/kovidgoyal/kitty
+cask "wezterm" # GPU-accelerated cross-platform terminal emulator and multiplexer -- https://wezfurlong.org/wezterm/
+
+# Text editing apps
+brew "emacs-plus@30", # GNU Emacs text editor -- https://www.gnu.org/software/emacs/
+  args: ["--with-native-comp", "--with-imagemagick", "--with-elrumo2-icon"]
+brew "helix" # Post-modern modal text editor -- https://helix-editor.com/
+brew "macvim" # GUI for Vim, made for macOS -- https://github.com/macvim-dev/macvim
+brew "neovim" # Ambitious Vim-fork focused on extensibility and agility -- https://neovim.io/
+# Text editing casks
+cask "neovide" # Neovim client -- https://github.com/neovide/neovide
+cask "visual-studio-code" # Open-source code editor -- https://code.visualstudio.com/
+
 # Audio apps
 brew "flac" # Free lossless audio codec -- https://xiph.org/flac/
 brew "lame" # High quality MPEG Audio Layer III (MP3) encoder -- https://lame.sourceforge.io/
@@ -70,6 +114,7 @@ brew "exiftool" # Perl lib for reading and writing EXIF metadata -- https://exif
 brew "graphicsmagick" # Image processing tools collection -- http://www.graphicsmagick.org/
 brew "imagemagick" # Tools and libraries to manipulate images in many formats -- https://imagemagick.org/index.php
 # Image casks
+cask "inkscape" # Vector graphics editor -- https://inkscape.org/
 cask "krita" # Free and open-source painting and sketching program -- https://krita.org/
 
 # Video apps
@@ -84,22 +129,12 @@ mas "DaVinci Resolve", id: 571_213_070 # https://www.blackmagicdesign.com/produc
 cask "epic-games" # Launcher for *Epic Games* games -- https://www.epicgames.com/
 cask "steam" # Video game digital distribution service -- https://store.steampowered.com/about/
 
-# Emacs
-tap "d12frosted/emacs-plus"
-brew "emacs-plus@30", # GNU Emacs text editor -- https://www.gnu.org/software/emacs/
-  args: ["--with-native-comp", "--with-imagemagick", "--with-elrumo2-icon"]
-
-# Vim
-brew "macvim" # GUI for Vim, made for macOS -- https://github.com/macvim-dev/macvim
-brew "neovim" # Ambitious Vim-fork focused on extensibility and agility -- https://neovim.io/
-cask "neovide" # Neovim client -- https://github.com/neovide/neovide
-
 # Dev apps
 brew "autoconf" # Automatic configure script builder -- https://www.gnu.org/software/autoconf
 brew "automake" # Tool for generating GNU Standards-compliant Makefiles -- https://www.gnu.org/software/automake/
 brew "bat" # Clone of cat with syntax highlighting and Git integration -- https://github.com/sharkdp/bat
 brew "bottom" # Yet another cross-platform graphical process/system monitor -- https://clementtsang.github.io/bottom/
-brew "broot" # New way to see and navigate directory trees -- https://dystroy.org/broot/
+#brew "broot" # New way to see and navigate directory trees -- https://dystroy.org/broot/
 brew "brotli" # Generic-purpose lossless compression algorithm by Google -- https://github.com/google/brotli
 brew "btop" # Resource monitor. C++ version and continuation of bashtop and bpytop -- https://github.com/aristocratos/btop
 brew "cmake" # Cross-platform make -- https://www.cmake.org/
@@ -118,6 +153,7 @@ brew "gdu" # Disk usage analyzer with console interface written in Go -- https:/
 brew "git" # Distributed revision control system -- https://git-scm.com/
 brew "graphviz" # Graph visualization software from AT&T and Bell Labs -- https://graphviz.org/
 brew "grep" # GNU grep, egrep and fgrep -- https://www.gnu.org/software/grep/
+brew "haskell-stack" # Cross-platform program for developing Haskell projects -- https://haskellstack.org/
 brew "hexyl" # Command-line hex viewer -- https://github.com/sharkdp/hexyl
 brew "hugo" # Configurable static site generator -- https://gohugo.io/
 brew "hyperfine" # Command-line benchmarking tool -- https://github.com/sharkdp/hyperfine
@@ -128,6 +164,7 @@ brew "lnav" # Curses-based tool for viewing and analyzing log files -- https://l
 brew "lolcat" # Rainbows and unicorns in your console! -- https://github.com/busyloop/lolcat
 brew "lsd" # Clone of ls with colorful output, file type icons, and more -- https://github.com/lsd-rs/lsd
 brew "make" # Utility for directing compilation -- https://www.gnu.org/software/make/
+brew "mise" # Polyglot runtime manager -- https://mise.jdx.dev/
 brew "nasm" # Netwide Assembler (NASM) is an 80x86 assembler -- https://www.nasm.us/
 brew "ncdu" # NCurses Disk Usage -- https://dev.yorhel.nl/ncdu
 brew "netcat" # Utility for managing network connections -- https://netcat.sourceforge.net/
@@ -161,31 +198,14 @@ brew "zellij" # Pluggable terminal workspace, with terminal multiplexer as the b
 brew "zlib" # General-purpose lossless data-compression library -- https://zlib.net/
 brew "zstd" # Zstandard is a real-time compression algorithm -- https://facebook.github.io/zstd/
 # Dev casks
-cask "alacritty" # GPU-accelerated terminal emulator -- https://github.com/alacritty/alacritty
-cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app -- https://www.iterm2.com/
-cask "kitty" # GPU-based terminal emulator -- https://github.com/kovidgoyal/kitty
-cask "visual-studio-code" # Open-source code editor -- https://code.visualstudio.com/
+cask "android-studio" # Tools for building Android applications -- https://developer.android.com/studio/
 cask "wine-stable" # Compatibility layer to run Windows applications -- https://wiki.winehq.org/MacOS
 
-# Bash apps
-brew "bash" # Bourne-Again SHell, a UNIX command interpreter -- https://www.gnu.org/software/bash/
-brew "bash-completion" # Programmable completion for Bash -- https://salsa.debian.org/debian/bash-completion
-brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts -- https://www.shellcheck.net/
-brew "shfmt" # Autoformat shell script source code -- https://github.com/mvdan/sh
-
-# Browser apps
-brew "emscripten" # LLVM bytecode to JavaScript compiler -- https://emscripten.org/
-brew "mozjpeg" # Improved JPEG encoder -- https://github.com/mozilla/mozjpeg
-brew "wabt" # Web Assembly Binary Toolkit -- https://github.com/WebAssembly/wabt
-brew "webp" # Image format providing lossless and lossy compression for web images -- https://developers.google.com/speed/webp/
-# Browser casks
-cask "charles" # Web debugging Proxy application -- https://www.charlesproxy.com/
-cask "firefox" # Web browser -- https://www.mozilla.org/firefox/
-cask "google-chrome" # Web browser -- https://www.google.com/chrome/
-cask "google-chrome@canary" # Web browser -- https://www.google.com/chrome/canary/
-cask "imageoptim" # Tool to optimise images to a smaller size -- https://imageoptim.com/mac
-cask "safari-technology-preview" # Web browser -- https://developer.apple.com/safari/resources/
-
+# Game dev apps
+brew "sdl2"
+brew "sdl2_image"
+brew "sdl2_mixer"
+brew "sdl2_ttf"
 # Game dev casks
 cask "blender" # 3D creation suite -- https://www.blender.org/
 cask "defold" # Game engine for development of desktop, mobile and web games -- https://defold.com/
@@ -195,12 +215,3 @@ cask "love" # 2D game framework for Lua -- https://love2d.org/
 cask "magicavoxel" # 8-bit 3D voxel editor and interactive path tracing renderer -- https://ephtracy.github.io/
 cask "tic80" # Fantasy computer for making, playing and sharing tiny games -- https://tic80.com/
 cask "tiled" # Flexible level editor -- https://www.mapeditor.org/
-
-# Haskell apps
-brew "haskell-stack" # Cross-platform program for developing Haskell projects -- https://haskellstack.org/
-
-# Mobile casks
-cask "android-studio" # Tools for building Android applications -- https://developer.android.com/studio/
-
-# Misc
-brew "mise" # Polyglot runtime manager -- https://mise.jdx.dev/
