@@ -12,6 +12,8 @@ source "$HOME/.bash/config.bash"
 [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 # Init starship.
 [[ -n $(command -v starship) ]] && eval "$(starship init bash)"
+# Init zoxide.
+[[ -n $(command -v zoxide) ]] && eval "$(zoxide init bash)"
 # Init cargo.
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 

@@ -8,6 +8,8 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 (&mise activate pwsh) | Out-String | Invoke-Expression
 # Init starship.
 (&starship init powershell) | Out-String | Invoke-Expression
+# Init zoxide.
+(&zoxide init powershell) | Out-String | Invoke-Expression
 
 # Message of the day.
 Get-Motd

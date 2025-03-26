@@ -5,6 +5,9 @@
     {
       "Packages": [
         {
+          "PackageIdentifier": "ajeetdsouza.zoxide"
+        },
+        {
           "PackageIdentifier": "Audacity.Audacity"
         },
         {

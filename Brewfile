@@ -196,6 +196,7 @@ brew "yazi" # Blazing fast terminal file manager written in Rust, based on async
 brew "yt-dlp" # Feature-rich command-line audio/video downloader -- https://github.com/yt-dlp/yt-dlp
 brew "zellij" # Pluggable terminal workspace, with terminal multiplexer as the base feature -- https://zellij.dev
 brew "zlib" # General-purpose lossless data-compression library -- https://zlib.net/
+brew "zoxide" # Shell extension to navigate your filesystem faster -- https://github.com/ajeetdsouza/zoxide
 brew "zstd" # Zstandard is a real-time compression algorithm -- https://facebook.github.io/zstd/
 # Dev casks
 cask "android-studio" # Tools for building Android applications -- https://developer.android.com/studio/
