@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-include="bash brew-aliases config ssh stack vim bash_profile bashrc gemrc ghci iex.exs inputrc"
+include="bash brew-aliases config ssh stack vim bash_profile bashrc default-gems default-npm-packages default-python-packages gemrc ghci iex.exs inputrc"
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
 for name in $include; do

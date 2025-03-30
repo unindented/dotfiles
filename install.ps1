@@ -1,6 +1,6 @@
 #!/usr/bin/env pwsh
 
-$include = @("config", "pwsh", "ssh", "stack", "vim", "gemrc", "ghci", "iex.exs")
+$include = @("config", "pwsh", "ssh", "stack", "vim", "default-gems", "default-npm-packages", "default-python-packages", "gemrc", "ghci", "iex.exs")
 
 foreach ($name in $include) {
   $target = "$env:USERPROFILE\.$name"
