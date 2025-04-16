@@ -2,15 +2,28 @@ hs.loadSpoon("ReloadConfiguration")
 spoon.ReloadConfiguration:start()
 
 local hyper = { "alt", "shift", "ctrl", "cmd" }
+local meh = { "alt", "shift", "ctrl" }
 
-local function launchOrFocus(name)
-  return function()
-    hs.application.launchOrFocus(name)
-  end
-end
+hs.loadSpoon("QuickLaunch")
+spoon.QuickLaunch:bindHotkeys({
+  ["Visual Studio Code"] = { hyper, "c" },
+  ["Emacs"] = { hyper, "e" },
+  ["Finder"] = { hyper, "f" },
+  ["Safari"] = { hyper, "s" },
+  ["Ghostty"] = { hyper, "t" },
+  ["Zotero"] = { hyper, "z" },
+})
 
-hs.hotkey.bind(hyper, "c", launchOrFocus("Visual Studio Code"))
-hs.hotkey.bind(hyper, "e", launchOrFocus("Emacs"))
-hs.hotkey.bind(hyper, "s", launchOrFocus("Safari"))
-hs.hotkey.bind(hyper, "t", launchOrFocus("WezTerm"))
-hs.hotkey.bind(hyper, "z", launchOrFocus("Zotero"))
+hs.grid.setMargins(8 .. "," .. 8)
+hs.window.animationDuration = 0
+
+hs.loadSpoon("WindowManager")
+spoon.WindowManager:bindHotkeys({
+  up = { meh, "up" },
+  right = { meh, "right" },
+  down = { meh, "down" },
+  left = { meh, "left" },
+  fullscreen = { meh, "f" },
+  nextscreen = { meh, "n" },
+  prevscreen = { meh, "p" },
+})
