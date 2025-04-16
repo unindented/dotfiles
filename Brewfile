@@ -23,7 +23,7 @@ cask "monitorcontrol" # Tool to control external monitor brightness & volume -- 
 cask "mouseless" # Mouse control with the keyboard -- https://mouseless.click/
 cask "netnewswire" # Free and open-source RSS reader -- https://netnewswire.com/
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more -- https://www.titanium-software.fr/en/onyx.html
-cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas -- https://rectangleapp.com/
+#cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas -- https://rectangleapp.com/
 cask "the-unarchiver" # Unpacks archive files -- https://theunarchiver.com/
 cask "transmission" # Open-source BitTorrent client -- https://transmissionbt.com/
 cask "whatsyoursign" # Shows a files cryptographic signing information -- https://objective-see.com/products/whatsyoursign.html
