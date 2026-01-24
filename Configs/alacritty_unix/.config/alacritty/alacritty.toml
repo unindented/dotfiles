@@ -1,0 +1,20 @@
+[general]
+import = ["./themes/catppuccin-mocha.toml"]
+
+[font]
+size = 18.0
+normal = { family = "Cascadia Mono NF", style = "Regular" }
+bold = { family = "Cascadia Mono NF", style = "Bold" }
+italic = { family = "Cascadia Mono NF", style = "Italic" }
+
+[window]
+decorations = "none"
+opacity = 1.0
+
+[window.dimensions]
+columns = 120
+lines = 36
+
+[window.padding]
+x = 12
+y = 12

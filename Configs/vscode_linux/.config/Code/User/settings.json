@@ -1,0 +1,46 @@
+{
+  "chat.disableAIFeatures": true,
+  "editor.accessibilitySupport": "off",
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": "explicit"
+  // },
+  "editor.fontFamily": "'Cascadia Mono NF', Menlo, Monaco, Consolas, 'Courier New', monospace",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [{ "column": 72 }, { "column": 80 }, { "column": 100 }],
+  "editor.semanticHighlighting.enabled": "configuredByTheme",
+  "editor.tabSize": 2,
+  "explorer.confirmUndo": "light",
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.minimumContrastRatio": 1,
+  "window.autoDetectColorScheme": false,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1.25,
+  "workbench.activityBar.location": "top",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  // Formatters
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  // Theme
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "catppuccin.accentColor": "pink",
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+  "catppuccin.workbenchMode": "flat",
+  "sundial.latitude": "47.6038321",
+  "sundial.longitude": "-122.3300623"
+}

@@ -1,0 +1,7 @@
+[tools]
+go = "1.25"
+java = "microsoft-21"
+node = "24"
+python = "3.14"
+ruby = "4.0"
+rust = { version = "latest", components = "rust-analyzer", targets = "wasm32-unknown-unknown" }

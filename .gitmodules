@@ -1,12 +1,9 @@
-[submodule "config/emacs"]
-	path = config/emacs
+[submodule "Configs/emacs_unix/.config/emacs"]
+	path = Configs/emacs_unix/.config/emacs
 	url = https://github.com/unindented/emacs-config
-	branch = main
-[submodule "config/nvim"]
-	path = config/nvim
+[submodule "Configs/nvim_unix/.config/nvim"]
+	path = Configs/nvim_unix/.config/nvim
 	url = https://github.com/unindented/neovim-config
-	branch = main
-[submodule "vim"]
-	path = vim
+[submodule "Configs/vim_unix/.vim"]
+	path = Configs/vim_unix/.vim
 	url = https://github.com/unindented/vim-config
-	branch = main
