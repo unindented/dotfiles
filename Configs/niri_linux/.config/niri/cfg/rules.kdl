@@ -1,0 +1,18 @@
+// ────────────── Window Rules ──────────────
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true // Always float Firefox PiP windows
+}
+
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+}
+
+// ────────────── Layer Rules ──────────────
+
+layer-rule {
+	match namespace="^noctalia-overview"
+	place-within-backdrop true
+}

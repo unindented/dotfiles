@@ -1,0 +1,10 @@
+include "./cfg/startup.kdl"
+include "./cfg/input.kdl"
+include "./cfg/outputs.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/layout.kdl"
+include "./cfg/rules.kdl"
+include "./cfg/animations.kdl"
+
+include "./noctalia.kdl"
+

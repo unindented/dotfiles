@@ -1,0 +1,8 @@
+// ────────────── Startup ──────────────
+
+spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
+spawn-sh-at-startup "qs -c noctalia-shell"
+
+hotkey-overlay {
+    skip-at-startup
+}
