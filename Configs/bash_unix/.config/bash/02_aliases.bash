@@ -8,6 +8,18 @@ alias sudo='sudo '
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+alias g='git'
+alias h='history'
+
+alias c='codium'
+alias e='emacs -nw'
+alias n='nvim'
+alias v='vim'
+
+alias e="$EDITOR"
 
 # ------------------------------------------------------------------------------
 # LS
@@ -31,73 +43,50 @@ alias lr='lsd -Alrt'
 alias lrt='lsd -Alrt --tree'
 
 # ------------------------------------------------------------------------------
-# GREP
+# COMMON FLAGS
 # ------------------------------------------------------------------------------
+
+alias df='df -h'
+alias du='du -h'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# ------------------------------------------------------------------------------
-# MKDIR
-# ------------------------------------------------------------------------------
-
 alias mkdir='mkdir -p'
 
 # ------------------------------------------------------------------------------
-# OPEN
-# ------------------------------------------------------------------------------
-
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  alias open='xdg-open'
-fi
-
-# ------------------------------------------------------------------------------
-# OTHERS
-# ------------------------------------------------------------------------------
-
-alias c='code'
-alias df='df -h'
-alias du='du -h'
-alias e='emacs -nw'
-alias f='find . -name'
-alias fp='fzf --preview-window "66%" --preview="bat -f {}" --bind shift-up:preview-page-up,shift-down:preview-page-down'
-alias g='git'
-alias h='history | tail -20'
-alias hf='history | grep -i'
-alias hh='history'
-alias n='nvim'
-alias s='stat -f "%z bytes"'
-alias v='vim'
-
-# Encode/decode text.
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-
-# IP addresses.
-alias localip='ipconfig getifaddr en0'
-alias remoteip='curl icanhazip.com'
-
-# Weather.
-alias weather='curl wttr.in/Seattle?m'
-alias moon='curl wttr.in/Moon'
-
-# ------------------------------------------------------------------------------
-# LINUX ALIASES
+# LINUX-SPECIFIC
 # ------------------------------------------------------------------------------
 
 if [[ "$OSTYPE" =~ ^linux ]]; then
+  # IP addresses.
+  alias localip="ip -4 addr show dev wlan0 | grep --color=never -oP '(?<=inet\s)\d+(\.\d+){3}'"
 
-  # Clipboard aliases.
-  alias pbcopy='xclip -i -selection clipboard'
-  alias pbpaste='xclip -o -selection clipboard'
+  # Display file size in bytes.
+  alias s='stat -c "%s bytes"'
 
+  # Open a file or dir.
+  alias open='xdg-open'
+
+  # Deal with clipboard.
+  alias pbcopy='wl-copy'
+  alias pbpaste='wl-paste'
+
+  # Show a concise summary of system hardware.
+  alias hw='hwinfo --short'
 fi
 
 # ------------------------------------------------------------------------------
-# MAC OS X ALIASES
+# MACOS-SPECIFIC
 # ------------------------------------------------------------------------------
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
+  # IP addresses.
+  alias localip='ipconfig getifaddr en0'
+
+  # Display file size in bytes.
+  alias s='stat -f "%z bytes"'
 
   # Show/hide hidden files.
   alias showfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
@@ -117,5 +106,18 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   # One day I might need it (http://xkcd.com/530/).
   alias stfu="osascript -e 'set volume output muted true'"
   alias pumpit="osascript -e 'set volume 7'"
-
 fi
+
+# ------------------------------------------------------------------------------
+# OTHERS
+# ------------------------------------------------------------------------------
+
+# IP addresses.
+alias remoteip='curl icanhazip.com'
+
+# Weather.
+alias weather='curl wttr.in/Seattle?m'
+alias moon='curl wttr.in/Moon'
+
+# Encode/decode text.
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'

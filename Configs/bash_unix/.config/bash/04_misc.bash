@@ -46,11 +46,11 @@ export TERM="xterm-256color"
 # ENCODING
 # ------------------------------------------------------------------------------
 
-: ${LANG:="en_US.UTF-8"}
 : ${LANGUAGE:="en"}
+: ${LANG:="en_US.UTF-8"}
 : ${LC_CTYPE:="en_US.UTF-8"}
 : ${LC_ALL:="en_US.UTF-8"}
-export LANG LANGUAGE LC_CTYPE LC_ALL
+export LANGUAGE LANG LC_CTYPE LC_ALL
 
 # ------------------------------------------------------------------------------
 # HISTORY
@@ -60,15 +60,15 @@ HISTSIZE=-1
 HISTFILESIZE=-1
 HISTIGNORE='l:ll:ls:bg:fg'
 HISTCONTROL=ignoredups:erasedups
-# https://unix.stackexchange.com/a/18443
-PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # ------------------------------------------------------------------------------
 # EDITOR AND PAGER
 # ------------------------------------------------------------------------------
 
 # Editor.
-if [[ -n "$(command -v vim)" ]]; then
+if [[ -n "$(command -v nvim)" ]]; then
+  EDITOR="nvim"
+elif [[ -n "$(command -v vim)" ]]; then
   EDITOR="vim"
 else
   EDITOR="vi"
@@ -78,7 +78,7 @@ export EDITOR
 # Pager.
 if [[ -n "$(command -v less)" && -n "$(command -v bat)" ]]; then
   PAGER="less -FirSwX"
-  MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  MANPAGER="bat -plman"
 elif [[ -n "$(command -v less)" ]]; then
   PAGER="less -FirSwX"
   MANPAGER="less -FiRswX"

@@ -21,13 +21,26 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # PATH
 # ------------------------------------------------------------------------------
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+
+# ------------------------------------------------------------------------------
+# LS
+# ------------------------------------------------------------------------------
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  export LSCOLORS='exfxcxdxbxegedabagacad'
+fi
+if [[ -n $(command -v vivid) ]]; then
+  export LS_COLORS="$(vivid generate catppuccin-mocha)"
+else
+  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+fi
 
 # ------------------------------------------------------------------------------
 # FZF
 # ------------------------------------------------------------------------------
 
-# Cattpuccin Latte
+# Catppuccin Latte
 #export FZF_DEFAULT_OPTS=" \
 #--color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
 #--color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
@@ -47,16 +60,3 @@ export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
-# ------------------------------------------------------------------------------
-# LS
-# ------------------------------------------------------------------------------
-
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  export LSCOLORS='exfxcxdxbxegedabagacad'
-fi
-if [[ -n $(command -v vivid) ]]; then
-  export LS_COLORS="$(vivid generate catppuccin-mocha)"
-else
-  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
-fi

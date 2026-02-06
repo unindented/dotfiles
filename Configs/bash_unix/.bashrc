@@ -1,8 +1,8 @@
 # Source all my stuff.
-source "$HOME/.bash/environment.bash"
-source "$HOME/.bash/aliases.bash"
-source "$HOME/.bash/functions.bash"
-source "$HOME/.bash/config.bash"
+source "$HOME/.config/bash/01_environment.bash"
+source "$HOME/.config/bash/02_aliases.bash"
+source "$HOME/.config/bash/03_functions.bash"
+source "$HOME/.config/bash/04_misc.bash"
 
 # Init fzf.
 [[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
