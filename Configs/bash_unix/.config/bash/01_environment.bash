@@ -21,7 +21,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # PATH
 # ------------------------------------------------------------------------------
 
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.lmstudio/bin:$HOME/.local/bin:$PATH"
 
 # ------------------------------------------------------------------------------
 # LS

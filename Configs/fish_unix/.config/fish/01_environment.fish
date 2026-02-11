@@ -12,6 +12,7 @@ set -x XDG_CACHE_HOME "$HOME/.cache"
 # ------------------------------------------------------------------------------
 
 fish_add_path "$HOME/.cargo/bin"
+fish_add_path "$HOME/.lmstudio/bin"
 fish_add_path "$HOME/.local/bin"
 
 # ------------------------------------------------------------------------------
