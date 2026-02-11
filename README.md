@@ -2,7 +2,7 @@
 
 These are my dotfiles. There are many like them, but these are mine.
 
-![Screenshot of terminal](./docs/screenshot.png)
+![Screenshot of desktop](./Docs/screenshot.png)
 
 ## Installation
 
