@@ -568,11 +568,11 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "~",
+        "directory": "~/.dotfiles/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
-        "fillMode": "crop",
+        "fillMode": "stretch",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
